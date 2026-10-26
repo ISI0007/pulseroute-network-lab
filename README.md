@@ -1,32 +1,49 @@
 # PulseRoute
 ### High-Performance Multimedia Transfer and Network Performance Laboratory
 
-A Windows-focused Computer Networks course project, written in Go with a planned React/TypeScript/Wails desktop shell.
+Go networking engines with a React/TypeScript/Tailwind interface and Wails desktop shell, developed for a Computer Networks course.
 
-**Development build — consult [verification](docs/PROGRESS.md) before treating a feature as complete.**
-No measured performance claim is made until reproducible evidence is recorded.
+**Unfinished development checkpoint.** Start with [progress](docs/PROGRESS.md), [restart notes](docs/RESUME.md), and [Windows policy diagnosis](docs/WINDOWS_APPLICATION_CONTROL.md). Successful compilation does not establish that desktop workflows work.
 
-## Structure
-- `internal/wire`: bounded length-prefixed frames.
-- `internal/network`: concurrent TCP chat and streamed file transfer.
-- `internal/bench`: TCP/UDP experiments and raw measurements.
-- `internal/store`: SQLite persistence and migrations.
-- `frontend`: desktop interface.
-- `docs`: specifications, architecture, evidence, academic materials.
+## Implemented source
+- Bounded length-prefixed TCP framing, concurrent chat, acknowledgments and client connections.
+- Streaming file transfer, SHA-256 verification, temporary-file cleanup, cancellation and progress.
+- TCP/UDP echo experiments, sequence-aware observations and raw-data structures.
+- LAN discovery and direct TCP file targeting.
+- SQLite schema/migration, settings, peer/event history and benchmark records.
+- Desktop overview, messages, transfer queue, media preview, lab, history and settings.
 
-## Build and test
-Install Go 1.24 or newer, Node.js, and the Wails v2 prerequisites.
-From the project root:
+Earlier tests passed for the core protocol, eight clients, file identity up to 16 MiB, interruption cleanup, and TCP/UDP loopback replies. Current full runtime verification is blocked by Windows Application Control. No real LAN benchmark or native UI screenshot is claimed.
+
+## Build
+Go 1.26+ (compiler used: 1.27.3), Node.js 24, WebView2, Windows amd64.
 ```powershell
 go test ./...
 go vet ./...
-go test -race ./...
+cd frontend
+npm.cmd ci
+npm.cmd run build
+cd ..
+go vet -tags desktop .
+go build -tags desktop,production -ldflags "-H windowsgui" -o build/bin/PulseRoute.exe .
+go build -o build/bin/pulseroute-cli.exe ./cmd/pulseroute
 ```
-The race detector requires a supported C toolchain on Windows. Run the provided CI workflow on Linux if unavailable locally.
-Desktop build commands will be recorded after toolchain verification.
+Both executables were compiled locally. Builds are unsigned. Use the approved signing/policy process before execution on protected systems; do not disable security controls.
 
-## Scope and trust boundary
-This laboratory is intended for trusted local networks. TCP provides an ordered byte stream; application framing and SHA-256 validate complete file transfers. UDP experiments measure application-observed behavior, not packet captures. Video files are transferred as binary files; live video calling is outside the implemented scope. Internet NAT traversal and custom TCP congestion-control algorithms are not claimed.
+## CLI examples
+```powershell
+.\build\bin\pulseroute-cli.exe -mode serve -addr 127.0.0.1:42191 -udp 127.0.0.1:42192
+.\build\bin\pulseroute-cli.exe -mode chat -addr 127.0.0.1:42191 -name Alice
+.\build\bin\pulseroute-cli.exe -mode send -addr 127.0.0.1:42191 -file C:\test\sample.bin
+.\build\bin\pulseroute-cli.exe -mode bench -protocol udp -udp 127.0.0.1:42192
+```
 
-## License
-Pending the project owner's explicit choice. No open-source license has been granted by this repository yet.
+## Boundaries
+Trusted local networks only; no encryption or peer authentication. Video files are transferred, not live video calls. No NAT traversal, custom TCP congestion control, transfer resume or server-mediated file forwarding to another client. Echo goodput is not link capacity. SQLite runtime and desktop bindings still need verification.
+
+## Project map
+`internal/wire`, `internal/network`, `internal/bench`, `internal/store`; `cmd/pulseroute`; `app.go` and `main.go` (desktop build tag); `frontend`; `docs`; `scripts`.
+Versioned SQLite schema: internal/store/migrations/001_initial.sql.
+CI workflow is prepared but has not run because repository access is unavailable.
+
+License is pending the owner's explicit choice. No LICENSE has been added.

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-26",
+  "scope": "Earlier successful Go test invocation before Windows Application Control blocked subsequent executables",
+  "environment": {
+    "os": "Windows",
+    "arch": "amd64",
+    "go": "go1.27.3",
+    "network": "127.0.0.1 loopback"
+  },
+  "observations": [
+    {
+      "test": "TestMultiClientReconnect",
+      "clients": 8,
+      "outcome": "PASS"
+    },
+    {
+      "test": "TestVerifiedFiles",
+      "bytes": [
+        0,
+        1,
+        65537,
+        16777216
+      ],
+      "copiesPerSize": 2,
+      "outcome": "PASS"
+    },
+    {
+      "test": "TestCorruptInterruptedAndTraversal",
+      "outcome": "PASS"
+    },
+    {
+      "test": "TestCancellationAndClose",
+      "outcome": "PASS"
+    },
+    {
+      "test": "TestEchoLoopback",
+      "tcp": {
+        "sent": 20,
+        "received": 20,
+        "lossPercent": 0
+      },
+      "udp": {
+        "sent": 20,
+        "received": 20,
+        "lossPercent": 0
+      },
+      "outcome": "PASS"
+    }
+  ],
+  "benchmarkRuns": [],
+  "rttThroughputMeasurements": "NOT RECORDED: no successful raw benchmark run was possible after Application Control began blocking executables",
+  "warning": "These are test assertions, not a link-performance benchmark or LAN measurement."
+}
