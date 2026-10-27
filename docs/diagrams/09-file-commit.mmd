@@ -1,0 +1,10 @@
+flowchart TD
+ Manifest[Validate manifest] --> Temp[Create random temporary file]
+ Temp --> Write[Write and hash chunks]
+ Write --> Verify{Size and hash match?}
+ Verify -->|Yes| File[Sync / close / unique rename]
+ File --> DB[Record SQLite completion]
+ DB --> Ack[Send complete acknowledgment]
+ Write -->|Disconnect| Cleanup[Delete temporary file]
+ Verify -->|No| Cleanup
+ DB -->|Record fails| Remove[Remove renamed file and report error]

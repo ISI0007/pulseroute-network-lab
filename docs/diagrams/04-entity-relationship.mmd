@@ -1,0 +1,20 @@
+erDiagram
+ benchmark_sessions ||--o{ benchmark_measurements : contains
+ settings { TEXT key PK
+ TEXT value }
+ peers { TEXT address PK
+ TEXT name
+ TEXT last_seen }
+ events { INTEGER seq PK
+ TEXT kind
+ TEXT reference_id
+ TEXT created_at
+ TEXT payload }
+ benchmark_sessions { TEXT id PK
+ TEXT protocol
+ TEXT address
+ TEXT created_at
+ TEXT result }
+ benchmark_measurements { TEXT session_id PK,FK
+ INTEGER sequence PK
+ TEXT payload }

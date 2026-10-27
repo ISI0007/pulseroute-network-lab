@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="684pt" height="402.48pt" viewBox="0 0 684 402.48" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-28T00:53:34.229089</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 402.48
+L 684 402.48
+L 684 -0
+L 0 -0
+z
+" style="fill: #0b1019"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 275.466955 283.019592
+Q 334.15133 285.289743 391.271626 283.080232
+" clip-path="url(#pe76220918a)" style="fill: none; stroke: #60e2d2; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 385.975015 280.68317
+L 391.271626 283.080232
+L 386.17601 285.879284
+z
+" clip-path="url(#pe76220918a)" style="fill: #60e2d2; stroke: #60e2d2; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 57.943125 148.134316
+L 176.169375 148.134316
+Q 181.400625 148.134316 181.400625 143.028
+L 181.400625 96.049895
+Q 181.400625 90.943579 176.169375 90.943579
+L 57.943125 90.943579
+Q 52.711875 90.943579 52.711875 96.049895
+L 52.711875 143.028
+Q 52.711875 148.134316 57.943125 148.134316
+z
+" clip-path="url(#pe76220918a)" style="fill: #152131; stroke: #34465e; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 282.886875 148.134316
+L 401.113125 148.134316
+Q 406.344375 148.134316 406.344375 143.028
+L 406.344375 96.049895
+Q 406.344375 90.943579 401.113125 90.943579
+L 282.886875 90.943579
+Q 277.655625 90.943579 277.655625 96.049895
+L 277.655625 143.028
+Q 277.655625 148.134316 282.886875 148.134316
+z
+" clip-path="url(#pe76220918a)" style="fill: #152131; stroke: #34465e; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 507.830625 148.134316
+L 626.056875 148.134316
+Q 631.288125 148.134316 631.288125 143.028
+L 631.288125 96.049895
+Q 631.288125 90.943579 626.056875 90.943579
+L 507.830625 90.943579
+Q 502.599375 90.943579 502.599375 96.049895
+L 502.599375 143.028
+Q 502.599375 148.134316 507.830625 148.134316
+z
+" clip-path="url(#pe76220918a)" style="fill: #152131; stroke: #34465e; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 146.874375 311.536421
+L 265.100625 311.536421
+Q 270.331875 311.536421 270.331875 306.430105
+L 270.331875 259.452
+Q 270.331875 254.345684 265.100625 254.345684
+L 146.874375 254.345684
+Q 141.643125 254.345684 141.643125 259.452
+L 141.643125 306.430105
+Q 141.643125 311.536421 146.874375 311.536421
+z
+" clip-path="url(#pe76220918a)" style="fill: #152131; stroke: #34465e; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 403.205625 311.536421
+L 521.431875 311.536421
+Q 526.663125 311.536421 526.663125 306.430105
+L 526.663125 259.452
+Q 526.663125 254.345684 521.431875 254.345684
+L 403.205625 254.345684
+Q 397.974375 254.345684 397.974375 259.452
+L 397.974375 306.430105
+Q 397.974375 311.536421 403.205625 311.536421
+z
+" clip-path="url(#pe76220918a)" style="fill: #152131; stroke: #34465e; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #edf3f8" x="28.125" y="22.518947" transform="rotate(-0 28.125 22.518947)">SQLite entity relationships</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #60e2d2" x="28.125" y="42.944211" transform="rotate(-0 28.125 42.944211)">PULSEROUTE / IMPLEMENTATION MODEL</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_8">
+     <path d="M 293.85125 254.713977
+L 374.455 254.713977
+L 374.455 231.509602
+L 293.85125 231.509602
+z
+" style="fill: #0b1019"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #a7b6c9" transform="translate(295.85125 240.389133)">1 to many / foreign</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #a7b6c9" transform="translate(327.150625 249.991321)">key</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(98.114883 116.305793)">settings</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(83.657812 127.708391)">PK key / value</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(328.711875 110.604123)">peers</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(294.649922 122.006721)">PK address / name /</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(319.727695 133.409318)">last_seen</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(550.939961 99.201525)">events</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(533.217266 110.604123)">PK seq / kind /</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(537.552383 122.006721)">reference_id</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(538.592188 133.409318)">created_at /</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(548.053594 144.811916)">payload</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(156.744102 268.305301)">benchmark_sessions</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(167.058281 279.707898)">PK id / protocol /</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(187.325937 291.110496)">address</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(162.689023 302.513094)">created_at / result</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(404.866758 256.903445)">benchmark_measureme</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(454.971836 268.305301)">nts</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(425.047578 279.707898)">PK session_id +</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(439.428203 291.109754)">sequence</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(427.559883 302.512351)">FK session_id /</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; fill: #edf3f8" transform="translate(443.428594 313.914949)">payload</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #a7b6c9" x="28.125" y="382.514211" transform="rotate(-0 28.125 382.514211)">Design/source diagram. Runtime verification status is documented separately.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe76220918a">
+   <rect x="7.2" y="7.2" width="669.6" height="388.08"/>
+  </clipPath>
+ </defs>
+</svg>

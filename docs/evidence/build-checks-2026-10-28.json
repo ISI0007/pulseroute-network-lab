@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-28",
+  "checks": [
+    {
+      "command": "go vet ./...",
+      "status": "PASS"
+    },
+    {
+      "command": "go vet -tags desktop .",
+      "status": "PASS"
+    },
+    {
+      "command": "go test -c -o ..\\work\\compiled-tests\\ ./internal/...",
+      "status": "PASS",
+      "scope": "Compilation only; no tests executed"
+    },
+    {
+      "command": "go test -c -tags desktop -o ..\\work\\compiled-tests\\desktop.test.exe .",
+      "status": "PASS",
+      "scope": "Compilation only"
+    },
+    {
+      "command": "npm.cmd run build",
+      "status": "PASS"
+    },
+    {
+      "command": "go build -o build\\bin\\pulseroute-cli.exe ./cmd/pulseroute",
+      "status": "PASS"
+    },
+    {
+      "command": "go build -tags desktop,production -ldflags \"-H windowsgui\" -o build\\bin\\PulseRoute.exe .",
+      "status": "PASS"
+    }
+  ],
+  "runtime": "BLOCKED by Smart App Control; no repeated execution attempted",
+  "recoverableFailures": [
+    "npm resolved to npm.ps1 and failed authorization; npm.cmd built successfully without policy changes",
+    "Schema check using default sandbox TEMP failed to open database; configuring authorized D: TEMP/TMP and the established Python toolchain passed"
+  ]
+}

@@ -1,0 +1,7 @@
+flowchart LR
+ UI[React / TypeScript / Tailwind] --> Service[Wails service]
+ Service --> TCP[TCP chat and file engine]
+ Service --> UDP[UDP echo and discovery]
+ Service --> DB[(SQLite)]
+ TCP <-->|TCP| Peer[Peer or hub]
+ UDP <-->|UDP| Peer

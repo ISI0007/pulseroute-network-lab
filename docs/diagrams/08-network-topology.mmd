@@ -1,0 +1,5 @@
+flowchart LR
+ A[Client A] <-->|Chat TCP| Hub[TCP chat hub]
+ B[Client B] <-->|Chat TCP| Hub
+ A -->|Direct file TCP| Receiver[Receiver on B]
+ A <-->|UDP probes| Echo[Echo endpoint]

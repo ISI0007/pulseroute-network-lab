@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "SQL schema only, executed with Python sqlite3; Go driver and application integration remain BLOCKED",
+  "checks": [
+    "DDL creation",
+    "parameterized text",
+    "foreign key enforcement",
+    "transaction rollback",
+    "reopen persistence",
+    "integrity_check"
+  ],
+  "sqliteVersion": "3.50.4",
+  "recordedAt": "2026-10-27T16:59:40.260952+00:00"
+}

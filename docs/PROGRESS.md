@@ -1,33 +1,36 @@
 # Progress and verification
-Paused at the user's request on 26 October 2026, approximately 13:34 Asia/Shanghai. Active project: D:\Project\PulseRoute\pulseroute-network-lab.
+Updated 28 October 2026 after the user's request to continue. Active project: D:\Project\PulseRoute\pulseroute-network-lab.
 
-**This is an unfinished development checkpoint, not a final submission.**
-PASS means the specified check ran successfully. FAIL means an attempted check failed. BLOCKED means an external restriction prevented the required validation. NOT VERIFIED means code exists without a successful relevant runtime test. NOT IMPLEMENTED means no working implementation.
+**Unfinished development checkpoint, not a final submission.** PASS means the named check succeeded; FAIL means an attempted check failed; BLOCKED means a restriction prevented validation; NOT VERIFIED means no relevant successful runtime test.
 
-| Component / check | Status | Evidence and limitations |
+| Check | Status | Scope |
 |---|---|---|
-| Go toolchain | PASS | Official go1.27.3 Windows archive SHA-256 verified; local toolchain on D: |
-| TCP framing and chat | PASS at earlier revision | Binary/short-write/bounds tests; eight clients; manual reconnect; first local commit 54f499c |
-| File engine | PASS at earlier revision | Empty, 1 B, 65,537 B, 16 MiB; two copies each; byte equality; corruption/traversal/interruption/cancellation |
-| TCP/UDP echo and synthetic metrics | PASS at earlier revision | 20/20 loopback replies per protocol; formulas test; no RTT/goodput values exported |
-| Latest complete Go test suite | BLOCKED | Application Control blocked generated test executables; not a successful runtime regression run |
-| SQLite migrations/persistence tests | BLOCKED / NOT VERIFIED | Source and tests compile; no successful runtime persistence test |
-| LAN discovery | NOT VERIFIED | Source/test compile; runtime blocked; no two-device test |
-| Reconnect service, queue, previews, UI bindings | NOT VERIFIED | Implemented; build/static checks only |
-| TypeScript and Vite production build | PASS | Final build completed with 1,578 transformed modules |
-| npm dependency audit | PASS | Zero reported vulnerabilities after updating Vite to 7.3.7 |
-| Go static analysis | PASS | go vet ./... and go vet -tags desktop . |
-| Windows executables | PASS: compilation only | build/bin/PulseRoute.exe and pulseroute-cli.exe; unsigned, launch not validated |
-| CLI benchmark execution | BLOCKED | Exact Application Control error; no raw benchmark runs produced |
-| Race detector | BLOCKED | Requires CGO/C compiler; gcc unavailable |
-| Browser functional/screenshot check | FAIL / environmental blocker | Edge/Chrome crash-server launch failure; no screenshots captured |
-| Two-device LAN / 8 GiB / soak tests | NOT VERIFIED | Hardware and permitted runtime needed |
-| GitHub identity | PASS | Connector returns ISI0007 |
-| GitHub repository/push | BLOCKED | User reports created; connector and public lookup return 404; local gh token invalid |
-| Report DOCX/PDF, diagrams collection, PPTX | NOT IMPLEMENTED | Documentation groundwork only; paused before artifact generation |
-| LICENSE | NOT IMPLEMENTED | Explicit license choice remains unanswered |
+| TCP framing, eight clients, file integrity and cleanup | PASS at earlier revision | Historical core tests; not regression evidence for current source |
+| TCP/UDP loopback | PASS at earlier revision | 20/20 replies each; no raw performance series retained |
+| Current Go runtime suite and CLI self-test | BLOCKED | Smart App Control event 3077; not rerun |
+| Go static checks | PASS | go vet ./... and go vet -tags desktop . |
+| Internal and desktop test compilation | PASS | go test -c; binaries were NOT executed |
+| CLI and desktop production compilation | PASS | Final builds include current frontend; unsigned |
+| TypeScript/Vite build | PASS | npm.cmd run build; 1,578 modules |
+| SQL schema validation | PASS | Python SQLite actual migration: rollback, foreign keys, reopen, integrity; not Go driver validation |
+| Frontend six-screen smoke checks | PASS | Installed signed Chrome; no JS errors; bridge unavailable, no mocked application data |
+| Desktop bridge, settings restart, discovery, reconnect | NOT VERIFIED | Implementation and tests compile; native runtime blocked |
+| Race detector | BLOCKED | CGO/C compiler prerequisite absent |
+| Two-device LAN, 8 GiB, soak and performance runs | NOT VERIFIED | Need approved runtime and devices |
+| Report DOCX/PDF | PASS: artifact checks | Draft, 22 sections, 10 PDF pages; ZIP/parser and PDF image bounds checks |
+| Presentation | PASS: artifact checks | Draft, 16 slides, speaker notes, native PowerPoint rendering |
+| Diagrams | PASS: generation | Ten diagrams, each Mermaid/SVG/PNG; diagrams describe current boundaries |
+| Windows policy attribution | PASS | Selected CodeIntegrity records identify VerifiedAndReputableDesktop/SAC |
+| GitHub push | BLOCKED | Connector cannot see repository; no remote commit claimed |
+| License | NOT IMPLEMENTED | Owner's choice pending |
 
-Current source has changes after the earlier passing tests. Do not treat those historical passes as verification of every current file. See WINDOWS_APPLICATION_CONTROL.md and RESUME.md.
+## Changes in this checkpoint
+Node settings now persist and reload; known peers and recent benchmark results restore on startup. Shutdown cancels outstanding operations and prevents new work from entering. Transfer progress is bounded. Preview reads have a hard size limit. TCP handshakes react to cancellation and readers have a silence timeout. Frontend source is formatted and settings can be saved.
 
-## Immediate continuation
-Confirm policy event attribution through an administrator; restore access to the exact GitHub repository; run the current test suite in an approved environment; fix runtime failures before final UI/academic deliverables. No security controls were disabled.
+See evidence JSON and screenshots in docs/evidence. Browser screenshots verify frontend rendering only. New Go regression tests were compiled, not run.
+
+## Failed checks and recovery
+An invocation of npm resolved to npm.ps1 and failed PowerShell authorization; the installed npm.cmd entry point completed the build. No execution-policy setting was changed. Earlier browser sandbox launch failures were resolved by approved execution of signed Chrome outside the tool sandbox, with Chromium sandboxing retained. Earlier event-log access failures were resolved by an approved read-only query outside the tool sandbox.
+
+## Remaining scope
+Current runtime/race/LAN validation, hub-mediated file relay/download, stronger recovery, measured benchmark data and final academic submission remain unfinished. No security control was disabled or bypassed.

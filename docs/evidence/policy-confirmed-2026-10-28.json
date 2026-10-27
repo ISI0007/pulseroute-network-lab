@@ -1,0 +1,29 @@
+{
+  "collectedOn": "2026-10-28",
+  "method": "Read-only Get-WinEvent outside restricted tool sandbox; selected event fields retained",
+  "policyName": "VerifiedAndReputableDesktop",
+  "policyGUID": "{0283ac0f-fff1-49ae-ada1-8a933130cad6}",
+  "policyID": "27555.1000.240208",
+  "provider": "Microsoft-Windows-CodeIntegrity",
+  "channel": "Microsoft-Windows-CodeIntegrity/Operational",
+  "status": "0xc0e90002",
+  "events": [
+    {
+      "eventID": 3077,
+      "recordID": 14737,
+      "timeUTC": "2026-10-26T05:25:56.5307479Z",
+      "file": "D:\\Project\\PulseRoute\\pulseroute-network-lab\\build\\bin\\pulseroute-cli.exe",
+      "process": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "flatSHA256": "0410226136D7195B85C6F7E656BF62725877197C9EC9B02621770419300FD8C0"
+    },
+    {
+      "eventID": 3077,
+      "recordID": 14722,
+      "timeUTC": "2026-10-26T05:23:44.7511163Z",
+      "file": "D:\\Project\\PulseRoute\\work\\tmp\\go-build1965270774\\b188\\store.test.exe",
+      "process": "D:\\Project\\PulseRoute\\work\\go\\bin\\go.exe",
+      "flatSHA256": "C0815CAF2C5A791CE4F79B9970C4BDDBB994DEE0008E6A980FFC762CAFD6D9A2"
+    }
+  ],
+  "note": "Historical hashes identify the binaries blocked on October 26, not later rebuilt artifacts. Policy inventory via CiTool still returned access denied. No matching AppLocker entries found in queried time window."
+}

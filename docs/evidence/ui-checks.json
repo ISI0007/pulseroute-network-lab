@@ -1,0 +1,7 @@
+{
+  "scope": "Built frontend only; no Go bridge and no native desktop workflow verification",
+  "navigationScreens": 6,
+  "consoleErrors": [],
+  "status": "PASS",
+  "recordedAt": "2026-10-27T16:40:35.781Z"
+}

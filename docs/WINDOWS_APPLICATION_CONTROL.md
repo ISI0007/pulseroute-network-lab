@@ -1,19 +1,18 @@
 # Windows execution-block diagnosis
-Recorded 26 October 2026, approximately 13:31?13:34 Asia/Shanghai.
+Recorded 26 October 2026, approximately 13:31-13:34 Asia/Shanghai.
 Scope: read-only investigation. No security controls, signatures, trust stores, firewall rules or application-control policies were changed.
 
-## Conclusion
-**Smart App Control is enabled in enforcement mode and is the leading explanation. Exact attribution of the blocked launches is NOT VERIFIED.**
-Observed registry value:
-`HKLM\SYSTEM\CurrentControlSet\Control\CI\Policy\VerifiedAndReputablePolicyState = 1`.
-Microsoft documents 1 as On (Enforcement). SAC is built on Windows application-control/code-integrity technology, so its error wording overlaps with App Control for Business/WDAC.
+## Conclusion (confirmed 28 October 2026)
+**The blocked CLI and Go test launches were enforced by Smart App Control.** An approved read-only event-log query outside the restricted tool sandbox succeeded. CodeIntegrity/Operational event **3077** identifies policy **VerifiedAndReputableDesktop**, GUID **{0283ac0f-fff1-49ae-ada1-8a933130cad6}**, policy ID **27555.1000.240208**, status **0xc0e90002**.
 
-Both built PulseRoute PE executables are unsigned (Get-AuthenticodeSignature returned NotSigned). That is evidence about signing, not proof that a binary is safe or the sole cause of its block.
-The AppLocker SrpV2 registry path was absent. This makes locally configured AppLocker less likely but does not rule out all managed policies.
-Code Integrity and AppLocker event-log reads failed with **Attempted to perform an unauthorized operation.**
-DeviceGuard CIM query failed with **Access to a CIM resource was not available to the client.**
-Read-only `CiTool.exe -lp -json` returned `{"OperationResult":-2147024891}` (0x80070005 / access denied).
-Therefore no event record ID, policy GUID/name or exact per-launch event ID was obtained. Do not describe candidate IDs below as observed events.
+- CLI: record **14737**, **2026-10-26T05:25:56.5307479Z** (13:25:56 +08), exact executable below.
+- Store test: record **14722**, **2026-10-26T05:23:44.7511163Z** (13:23:44 +08), exact executable below.
+- Registry VerifiedAndReputablePolicyState = 1 corroborates enforcement.
+- No matching AppLocker entries were found in the queried window. This does not prove no other policies exist; these launches are attributed to the named SAC policy.
+
+Selected event fields and historical hashes: [policy evidence](evidence/policy-confirmed-2026-10-28.json). Historical hashes identify October 26 binaries, not later builds. The unsigned build status does not establish that a binary is safe.
+
+Initial October 26 event-log/CIM queries were denied. Those earlier limitations are superseded by this successful event read. CiTool policy inventory still returns access denied (-2147024891). No controls or trust stores were changed and blocked binaries were not rerun.
 
 ## Exact blocked commands and files
 Working directory: `D:\Project\PulseRoute\pulseroute-network-lab`.
@@ -37,14 +36,14 @@ Working directory: `D:\Project\PulseRoute\pulseroute-network-lab`.
 
 The desktop `build\bin\PulseRoute.exe` compiled and was found unsigned, but was **not launched**. It must not be reported as a separately observed blocked executable.
 
-## Relevant event IDs to inspect (not observed here)
-- CodeIntegrity/Operational **3077**: enforced application-control block, including SAC.
+## Event interpretation
+- CodeIntegrity/Operational **3077** (observed): enforced application-control block, including SAC.
 - Correlated **3089**: signature information, useful for understanding unsigned/untrusted status.
 - **3099**: policy activation information; correlate policy identity.
 - AppLocker/EXE and DLL **8004**: an executable/DLL was prevented from running.
 - CodeIntegrity **3076** is audit/evaluation, not an enforced block.
 
-An administrator should use Event Viewer to filter the relevant logs around 26 October 2026, 13:17?13:30 +08:00 and search for the exact paths above. Retain XML details (policy ID/name, activity ID, file hash, process path and timestamp). The helper script scripts/collect-policy-evidence.ps1 performs read-only collection and does not rerun the program.
+An administrator should use Event Viewer to filter the relevant logs around 26 October 2026, 13:17-13:30 +08:00 and search for the exact paths above. Retain XML details (policy ID/name, activity ID, file hash, process path and timestamp). The helper script scripts/collect-policy-evidence.ps1 performs read-only collection and does not rerun the program.
 
 ## Appropriate approval process
 1. Review the source, provenance and build output; use docs/evidence/executable-sha256.json to identify the saved artifacts. These are ordinary SHA-256 file hashes, not automatically the Authenticode/PE hashes used by WDAC policy rules.
@@ -57,7 +56,7 @@ An administrator should use Event Viewer to filter the relevant logs around 26 O
 ## Other failures, kept separate
 - Earlier C: storage exhaustion and temporary-file rename errors were resolved by moving active work to D:; core tests then passed.
 - Race detection: `go: -race requires cgo; enable cgo by setting CGO_ENABLED=1`; no C compiler is installed. This is a toolchain prerequisite, not the SAC diagnosis.
-- Edge/Chrome headless automation failed with crash-server/COM access errors. No Code Integrity evidence attributes these browser failures to SAC.
+- Earlier Edge/Chrome launches failed with crash-server/COM errors. On October 28 signed Chrome ran through approved tool-sandbox escalation with Chromium sandboxing retained; all six frontend screens passed. No OS security setting changed.
 - Frontend Vite realpath failure was resolved by preserving project symlink paths during bundling; TypeScript and production builds pass.
 - GitHub target remains inaccessible via connector (404); no remote commits are claimed.
 

@@ -1,0 +1,23 @@
+{
+  "reportSections": 22,
+  "slides": 16,
+  "diagrams": 10,
+  "artifacts": [
+    {
+      "name": "PulseRoute-Presentation-DRAFT.pptx",
+      "bytes": 350193
+    },
+    {
+      "name": "PulseRoute-Technical-Report-DRAFT.docx",
+      "bytes": 509000
+    },
+    {
+      "name": "PulseRoute-Technical-Report-DRAFT.pdf",
+      "bytes": 495032
+    },
+    {
+      "name": "README.txt",
+      "bytes": 325
+    }
+  ]
+}

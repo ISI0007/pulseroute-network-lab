@@ -47,3 +47,6 @@ Versioned SQLite schema: internal/store/migrations/001_initial.sql.
 CI workflow is prepared but has not run because repository access is unavailable.
 
 License is pending the owner's explicit choice. No LICENSE has been added.
+
+## Draft academic deliverables
+[Technical report PDF](deliverables/PulseRoute-Technical-Report-DRAFT.pdf), [editable DOCX](deliverables/PulseRoute-Technical-Report-DRAFT.docx), [presentation with notes](deliverables/PulseRoute-Presentation-DRAFT.pptx), and [ten diagrams](docs/diagrams). These are progress drafts, not a completed submission. See [verification status](docs/PROGRESS.md) for the exact evidence boundary.

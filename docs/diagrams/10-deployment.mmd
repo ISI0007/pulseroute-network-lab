@@ -1,0 +1,7 @@
+flowchart LR
+ subgraph HostA[Windows host A]
+ App[PulseRoute.exe] --> View[WebView2 / React assets]
+ App --> Go[Go service / OS sockets]
+ Go --> Data[(SQLite / received files)]
+ end
+ Go <-->|TCP and UDP on trusted LAN| Peer[Windows host B: PulseRoute or CLI]

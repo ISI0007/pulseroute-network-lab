@@ -1,0 +1,12 @@
+[
+    {
+        "Path":  "D:\\Project\\PulseRoute\\pulseroute-network-lab\\build\\bin\\PulseRoute.exe",
+        "Hash":  "FB8A9544012BB3142611678B0620F2C424408A1914DE5EFCA622F5A10D8DD8BE",
+        "Algorithm":  "SHA256"
+    },
+    {
+        "Path":  "D:\\Project\\PulseRoute\\pulseroute-network-lab\\build\\bin\\pulseroute-cli.exe",
+        "Hash":  "C661AE23E857DC653AEBB2CB2954240E62C376A2F681CFE39BDB34D5270A33C9",
+        "Algorithm":  "SHA256"
+    }
+]

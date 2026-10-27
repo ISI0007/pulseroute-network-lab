@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "pdfPages": 10,
+  "reportSections": 22,
+  "slides": 16,
+  "speakerNotes": "present on every slide",
+  "officeArchives": "valid ZIP packages, opened by document parsers",
+  "slideBounds": "all shapes within slide",
+  "nativePowerPointRendering": "PASS: native PowerPoint rendered this exact presentation",
+  "diagramFiles": 10
+}

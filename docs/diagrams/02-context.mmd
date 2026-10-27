@@ -1,0 +1,5 @@
+flowchart LR
+ Student[Student operator] -->|Configure and operate| App[PulseRoute]
+ App <-->|TCP / UDP| Peers[Remote peers]
+ App --> Disk[(Local disk and SQLite)]
+ App -->|Evidence and demonstration| Evaluator[Course evaluator]

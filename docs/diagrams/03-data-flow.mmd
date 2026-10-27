@@ -1,0 +1,7 @@
+flowchart LR
+ Input[Operator input] --> Validate[Service validation]
+ Validate --> Transport[Network transport]
+ Transport --> Response[Peer response]
+ Response --> History[(History transaction)]
+ History --> Snapshot[UI snapshot]
+ Transport -->|Transient progress| Snapshot

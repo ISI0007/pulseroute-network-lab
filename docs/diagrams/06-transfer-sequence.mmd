@@ -1,0 +1,17 @@
+sequenceDiagram
+ participant S as Sender
+ participant R as Receiver
+ participant D as Disk
+ participant DB as SQLite
+ S->>S: Hash source then rewind
+ S->>R: put(id,name,size,sha256)
+ R->>S: ready
+ loop 64 KiB chunks
+ S->>R: binary chunk
+ R->>D: write temporary file
+ end
+ S->>R: end
+ R->>R: Check size and SHA-256
+ R->>D: sync, close, unique rename
+ R->>DB: Record verified transfer
+ R->>S: complete(id,size,sha256)

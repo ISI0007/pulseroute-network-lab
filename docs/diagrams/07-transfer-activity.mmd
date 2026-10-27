@@ -1,0 +1,11 @@
+flowchart TD
+ Select[Select regular file] --> Validate{Valid size and name?}
+ Validate -->|Yes| Hash[Hash source]
+ Validate -->|No| Error[Surface error]
+ Hash --> Dial[Dial and negotiate]
+ Dial --> Stream[Stream chunks]
+ Stream --> Verify{Size and digest match?}
+ Verify -->|Yes| Commit[Sync / rename / record / ack]
+ Verify -->|No| Cleanup[Remove temporary file]
+ Stream -->|Cancel or interruption| Cleanup
+ Cleanup --> Error
