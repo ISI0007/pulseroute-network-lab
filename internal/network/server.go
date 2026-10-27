@@ -224,6 +224,8 @@ func Connect(ctx context.Context, addr, name string) (*Client, error) {
 	if e != nil {
 		return nil, e
 	}
+	stopHandshake := context.AfterFunc(ctx, func() { c.Close() })
+	defer stopHandshake()
 	c.SetDeadline(time.Now().Add(5 * time.Second))
 	if e = wire.Send(c, wire.Header{Op: "hello", Peer: name}); e != nil {
 		c.Close()
@@ -247,6 +249,7 @@ func (c *Client) read() {
 	defer close(c.Events)
 	defer c.Close()
 	for {
+		c.p.conn.SetReadDeadline(time.Now().Add(60 * time.Second))
 		h, e := wire.Receive(c.p.conn)
 		if e != nil {
 			return

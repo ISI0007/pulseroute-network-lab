@@ -1,0 +1,61 @@
+//go:build desktop
+
+package main
+
+import (
+	"context"
+	"fmt"
+	"github.com/ISI0007/pulseroute-network-lab/internal/network"
+	"github.com/ISI0007/pulseroute-network-lab/internal/store"
+	"testing"
+	"time"
+)
+
+func TestProgressRetentionAndShutdown(t *testing.T) {
+	a, err := newApp(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	for i := 0; i < 200; i++ {
+		id := fmt.Sprint(i)
+		if err = a.record(network.Event{Kind: "progress", ID: id, Status: "sending", At: time.Now()}); err != nil {
+			t.Fatal(err)
+		}
+		if err = a.record(network.Event{Kind: "transfer", ID: id, Status: "sent-verified", At: time.Now()}); err != nil {
+			t.Fatal(err)
+		}
+	}
+	snapshot, err := a.Snapshot()
+	if err != nil || len(snapshot.Progress) != 128 {
+		t.Fatalf("progress retained: %d, error: %v", len(snapshot.Progress), err)
+	}
+	a.shutdown(context.Background())
+	if _, err = a.Snapshot(); err == nil {
+		t.Fatal("snapshot allowed after database shutdown")
+	}
+	if err = a.SaveSettings(store.DefaultSettings()); err == nil {
+		t.Fatal("settings write allowed after shutdown")
+	}
+}
+func TestDesktopSettingsRestart(t *testing.T) {
+	dir := t.TempDir()
+	a, err := newApp(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	settings := store.DefaultSettings()
+	settings.Name = "saved-name"
+	if err = a.SaveSettings(settings); err != nil {
+		t.Fatal(err)
+	}
+	a.shutdown(context.Background())
+	a, err = newApp(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer a.shutdown(context.Background())
+	snapshot, err := a.Snapshot()
+	if err != nil || snapshot.Settings.Name != "saved-name" {
+		t.Fatal(snapshot.Settings, err)
+	}
+}

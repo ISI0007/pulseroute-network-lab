@@ -30,7 +30,7 @@ func main() {
 	if e != nil {
 		log.Fatal(e)
 	}
-	if e = wails.Run(&options.App{Title: "PulseRoute ? Network Laboratory", Width: 1380, Height: 900, MinWidth: 1000, MinHeight: 720, BackgroundColour: options.NewRGB(10, 15, 25), AssetServer: &assetserver.Options{Assets: assets}, OnStartup: app.startup, OnShutdown: func(ctx context.Context) { app.shutdown(ctx) }, Bind: []interface{}{app}, DragAndDrop: &options.DragAndDrop{EnableFileDrop: true, DisableWebViewDrop: true}, Windows: &windows.Options{WebviewUserDataPath: filepath.Join(dir, "webview")}}); e != nil {
+	if e = wails.Run(&options.App{Title: "PulseRoute - Network Laboratory", Width: 1380, Height: 900, MinWidth: 1000, MinHeight: 720, BackgroundColour: options.NewRGB(10, 15, 25), AssetServer: &assetserver.Options{Assets: assets}, OnStartup: app.startup, OnShutdown: func(ctx context.Context) { app.shutdown(ctx) }, Bind: []interface{}{app}, DragAndDrop: &options.DragAndDrop{EnableFileDrop: true, DisableWebViewDrop: true}, Windows: &windows.Options{WebviewUserDataPath: filepath.Join(dir, "webview")}}); e != nil {
 		log.Fatal(e)
 	}
 }

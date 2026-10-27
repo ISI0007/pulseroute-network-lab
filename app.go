@@ -12,6 +12,7 @@ import (
 	"github.com/ISI0007/pulseroute-network-lab/internal/network"
 	"github.com/ISI0007/pulseroute-network-lab/internal/store"
 	wr "github.com/wailsapp/wails/v2/pkg/runtime"
+	"io"
 	"mime"
 	"net"
 	"net/http"
@@ -24,6 +25,7 @@ import (
 )
 
 type Snapshot struct {
+	Settings  store.Settings  `json:"settings"`
 	Listening string          `json:"listening"`
 	UDP       string          `json:"udp"`
 	Connected string          `json:"connected"`
@@ -37,6 +39,9 @@ type Snapshot struct {
 	DataDir   string          `json:"dataDir"`
 }
 type App struct {
+	life      context.Context
+	cancel    context.CancelFunc
+	closing   bool
 	ctx       context.Context
 	mu        sync.Mutex
 	ops       sync.Mutex
@@ -68,6 +73,19 @@ func newApp(dir string) (*App, error) {
 		return nil, e
 	}
 	a := &App{db: db, dir: dir, progress: map[string]network.Event{}, allowed: map[string]string{}, state: Snapshot{Theme: theme, DataDir: dir, Peers: []network.Peer{}, Results: []bench.Result{}, Dropped: []string{}}}
+	a.life, a.cancel = context.WithCancel(context.Background())
+	a.state.Settings, e = db.LoadSettings()
+	if e == nil {
+		a.state.Peers, e = db.KnownPeers()
+	}
+	if e == nil {
+		a.state.Results, e = db.Results()
+	}
+	if e != nil {
+		a.cancel()
+		db.Close()
+		return nil, e
+	}
 	return a, nil
 }
 func (a *App) startup(ctx context.Context) {
@@ -84,6 +102,14 @@ func (a *App) startup(ctx context.Context) {
 	})
 }
 func (a *App) shutdown(ctx context.Context) {
+	a.mu.Lock()
+	if a.closing {
+		a.mu.Unlock()
+		return
+	}
+	a.closing = true
+	a.cancel()
+	a.mu.Unlock()
 	a.Disconnect()
 	a.CancelTransfer()
 	a.StopHost()
@@ -102,26 +128,28 @@ func (a *App) record(e network.Event) error {
 	if e.At.IsZero() {
 		e.At = time.Now().UTC()
 	}
-	if e.Kind == "transfer" {
+	if e.Kind == "progress" || e.Kind == "transfer" {
 		a.mu.Lock()
-		if _, ok := a.progress[e.ID]; ok {
+		if _, exists := a.progress[e.ID]; !exists && len(a.progress) >= 128 {
+			oldest := ""
+			var at time.Time
+			for id, v := range a.progress {
+				terminal := v.Status == "verified" || v.Status == "sent-verified" || v.Status == "failed" || v.Status == "cancelled"
+				if terminal && (oldest == "" || v.At.Before(at)) {
+					oldest, at = id, v.At
+				}
+			}
+			if oldest != "" {
+				delete(a.progress, oldest)
+			}
+		}
+		if _, exists := a.progress[e.ID]; exists || len(a.progress) < 128 {
 			a.progress[e.ID] = e
 		}
 		a.mu.Unlock()
-	}
-	if e.Kind == "progress" {
-		a.mu.Lock()
-		a.progress[e.ID] = e
-		if len(a.progress) > 128 {
-			for k, v := range a.progress {
-				if v.Status == "verified" || v.Status == "failed" || v.Status == "cancelled" {
-					delete(a.progress, k)
-					break
-				}
-			}
+		if e.Kind == "progress" {
+			return nil
 		}
-		a.mu.Unlock()
-		return nil
 	}
 	err := a.db.Record(e)
 	if err != nil {
@@ -130,6 +158,10 @@ func (a *App) record(e network.Event) error {
 	return err
 }
 func (a *App) Snapshot() (Snapshot, error) {
+	if err := a.beginOperation(); err != nil {
+		return Snapshot{}, err
+	}
+	defer a.wg.Done()
 	history, e := a.db.History(200)
 	if e != nil {
 		return Snapshot{}, e
@@ -149,6 +181,10 @@ func (a *App) Snapshot() (Snapshot, error) {
 	return s, nil
 }
 func (a *App) StartHost(tcp, udp, name string) error {
+	if err := a.beginOperation(); err != nil {
+		return err
+	}
+	defer a.wg.Done()
 	a.ops.Lock()
 	defer a.ops.Unlock()
 	a.mu.Lock()
@@ -166,9 +202,9 @@ func (a *App) StartHost(tcp, udp, name string) error {
 		s.Close()
 		return e
 	}
-	_, p, _ := net.SplitHostPort(s.Addr())
+	host, p, _ := net.SplitHostPort(s.Addr())
 	port, _ := strconv.Atoi(p)
-	d, de := network.Advertise("0.0.0.0:42190", name, port)
+	d, de := network.Advertise(net.JoinHostPort(host, "42190"), name, port)
 	a.mu.Lock()
 	a.server = s
 	a.echo = u
@@ -203,10 +239,14 @@ func (a *App) StopHost() {
 	}
 }
 func (a *App) Connect(addr, name string) error {
+	if err := a.beginOperation(); err != nil {
+		return err
+	}
+	defer a.wg.Done()
 	a.ops.Lock()
 	defer a.ops.Unlock()
 	a.disconnect()
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(a.life)
 	c, e := network.Connect(ctx, addr, name)
 	if e != nil {
 		cancel()
@@ -320,6 +360,10 @@ func (a *App) ChooseFiles() ([]string, error) {
 	return paths, e
 }
 func (a *App) SendFile(addr, path string) error {
+	if err := a.beginOperation(); err != nil {
+		return err
+	}
+	defer a.wg.Done()
 	a.mu.Lock()
 	if a.transfer != nil {
 		a.mu.Unlock()
@@ -329,7 +373,7 @@ func (a *App) SendFile(addr, path string) error {
 		a.mu.Unlock()
 		return errors.New("select the file through the file picker or drop zone")
 	}
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(a.life)
 	a.transfer = cancel
 	a.mu.Unlock()
 	a.wg.Add(1)
@@ -362,7 +406,11 @@ func (a *App) CancelTransfer() {
 	}
 }
 func (a *App) Discover(target string) ([]network.Peer, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	if err := a.beginOperation(); err != nil {
+		return nil, err
+	}
+	defer a.wg.Done()
+	ctx, cancel := context.WithTimeout(a.life, 2*time.Second)
 	defer cancel()
 	peers, e := network.Discover(ctx, target)
 	if e != nil {
@@ -379,7 +427,11 @@ func (a *App) Discover(target string) ([]network.Peer, error) {
 	return peers, nil
 }
 func (a *App) Benchmark(protocol, addr string, count, size int) (bench.Result, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	if err := a.beginOperation(); err != nil {
+		return bench.Result{}, err
+	}
+	defer a.wg.Done()
+	ctx, cancel := context.WithTimeout(a.life, 30*time.Second)
 	defer cancel()
 	r, e := bench.Run(ctx, protocol, addr, count, size)
 	if e != nil {
@@ -401,6 +453,10 @@ func (a *App) Benchmark(protocol, addr string, count, size int) (bench.Result, e
 	return r, nil
 }
 func (a *App) SetTheme(theme string) error {
+	if err := a.beginOperation(); err != nil {
+		return err
+	}
+	defer a.wg.Done()
 	if theme != "dark" && theme != "light" {
 		return errors.New("invalid theme")
 	}
@@ -427,6 +483,10 @@ func (a *App) ExportResults() (string, error) {
 	return p, os.WriteFile(p, b, 0600)
 }
 func (a *App) Preview(path string) (string, error) {
+	if err := a.beginOperation(); err != nil {
+		return "", err
+	}
+	defer a.wg.Done()
 	a.mu.Lock()
 	allowed := a.allowed[path] != ""
 	a.mu.Unlock()
@@ -445,9 +505,17 @@ func (a *App) Preview(path string) (string, error) {
 	if !allowed {
 		return "", errors.New("file was not selected or received")
 	}
-	st, e := os.Stat(path)
+	f, e := os.Open(path)
 	if e != nil {
 		return "", e
+	}
+	defer f.Close()
+	st, e := f.Stat()
+	if e != nil {
+		return "", e
+	}
+	if !st.Mode().IsRegular() {
+		return "", errors.New("preview requires a regular file")
 	}
 	if st.Size() > 16*1024*1024 {
 		return "", errors.New("inline preview limit is 16 MiB; transferred files remain available in the data folder")
@@ -457,12 +525,39 @@ func (a *App) Preview(path string) (string, error) {
 	if ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".webp" && ext != ".mp4" && ext != ".webm" {
 		return "", errors.New("preview supports PNG, JPEG, GIF, WebP, MP4 and WebM")
 	}
-	b, e := os.ReadFile(path)
+	b, e := io.ReadAll(io.LimitReader(f, 16*1024*1024+1))
 	if e != nil {
 		return "", e
+	}
+	if len(b) > 16*1024*1024 {
+		return "", errors.New("file grew beyond the inline preview limit")
 	}
 	if typ == "" {
 		typ = http.DetectContentType(b)
 	}
 	return "data:" + typ + ";base64," + base64.StdEncoding.EncodeToString(b), nil
+}
+
+// beginOperation prevents new database/network work once shutdown starts.
+func (a *App) beginOperation() error {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	if a.closing {
+		return errors.New("application is shutting down")
+	}
+	a.wg.Add(1)
+	return nil
+}
+func (a *App) SaveSettings(settings store.Settings) error {
+	if err := a.beginOperation(); err != nil {
+		return err
+	}
+	defer a.wg.Done()
+	if err := a.db.SaveSettings(settings); err != nil {
+		return err
+	}
+	a.mu.Lock()
+	a.state.Settings = settings
+	a.mu.Unlock()
+	return nil
 }
