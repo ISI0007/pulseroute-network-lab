@@ -8,7 +8,7 @@ Documents Python: D:\tools\venv\Scripts\python.exe with PYTHONPATH= D:\Project\P
 Keep project work on D: and preserve unrelated files.
 
 ## Verified state
-Core networking, SQLite, discovery and experiments passed on Linux (with race detection) and Windows. Four Windows desktop backend tests passed. Source commit 4ef6e0c; run 40626295936. Raw logs/provenance: docs/evidence/ci/4ef6e0c. Twenty actual loopback runs were independently recalculated; results in docs/experiments/4ef6e0c.
+Core networking, SQLite, discovery and experiments passed on Linux (with race detection) and Windows. Five Windows desktop backend tests passed for the refreshed workspace. Latest source 8d267be; run 40669618323 passed all three jobs, including native window/receiver/settings/theme selection. Native evidence: docs/evidence/native-8d267be. Raw experiment baseline remains docs/evidence/ci/4ef6e0c. Twenty actual loopback runs were independently recalculated; results in docs/experiments/4ef6e0c.
 
 Latest changes: persisted settings/history reload, bounded state/preview reads, lifecycle cancellation, 128 MiB streamed integrity regression, active cancellation cleanup, UDP cookie validation/impairment tests, and correlated message confirmations. UI displays server acceptance/socket-write count and never claims human reading. Source and evidence are pushed to main and codex/pulseroute-foundation.
 
@@ -16,7 +16,7 @@ Latest changes: persisted settings/history reload, bounded state/preview reads, 
 Smart App Control VerifiedAndReputableDesktop blocks local Go test/CLI launches and now go.exe itself. Compiler event 3077 record 14769 on October 28; evidence JSON retained. Do not retry blocked commands without a meaningful authorized signing/policy change. Do not disable controls, add exclusions or bypass policy. Use GitHub Actions for Go runtime/static/build validation. gofmt and signed Chrome frontend smoke tests remained permitted. Root Linux race tests and Windows desktop backend tests run in CI. Conversational approval does not change Windows policy.
 
 ## Remaining work
-1. Native Wails/WebView2 interaction tests: window launch, real dialogs, drag/drop, queue/cancel, preview and end-user settings workflow. Backend tests do not cover these.
+1. Native window/navigation/receiver/settings smoke passed in CI run 40668188066. Continue real file dialogs, drag/drop, queue/cancel and media preview workflow checks; these remain unverified.
 2. Two-device LAN and larger/soak experiments; record environments and samples. Existing hosted loopback is not a link-capacity benchmark.
 3. Decide whether optional hub file forwarding/download and transfer resume are needed for final scope. Existing direct uploads and hub chat are implemented.
 4. Revise report DOCX/PDF and presentation into a final submission using the measured evidence/addendum; existing artifacts are earlier progress drafts.
@@ -30,3 +30,9 @@ Owner approved publishing unsigned prerelease v0.1.0-preview.1, source 2a85693. 
 
 ## Sponsorship submission update
 Owner confirmed the application website displayed a thank-you message after the authorized form submission. The automated session had ended without capturing that final acknowledgement, so confirmation is explicitly owner-reported. Await the provider reply; do not duplicate the application or claim acceptance/signing. The owner must complete any official email verification privately.
+
+## Frontend refresh
+Four palettes, accessible navigation/controls, keyboard/reduced-motion behavior and adaptive idle/hidden refresh are implemented. Browser QA passed 72 layout cases and 32 representative color pairs, minimum 5.425:1. Fresh installs use Forest; all four themes validate and survive backend restart tests. Native baseline result/screenshot: docs/evidence/native-755818d. A verified unsigned build was saved at D:\Project\PulseRoute\work\verified-755818d-UNSIGNED without executing it locally. It has no trusted signature and is not the existing public preview artifact.
+
+## Final refreshed build verification
+Run 40669618323 / source 8d267be passed Linux race/core, Windows core/backend/build and actual native UI smoke. Native UI selected Ocean and persisted it in SQLite. The custom media Tab trap was replaced by native dialog focus behavior. Browser QA passed again after that correction. Final portable files: D:\Project\PulseRoute\work\verified-8d267be-UNSIGNED; zip: work\ci-artifacts\pulseroute-windows-8d267be.zip. Files were hash-checked, never executed locally. Public preview v0.1.0-preview.1 remains unchanged and older; publishing another release needs approval.

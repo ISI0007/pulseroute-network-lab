@@ -62,3 +62,6 @@ Licensed under [MIT](LICENSE), approved by the owner on 28 October 2026. Depende
 
 ## Development preview download
 [Windows x64 portable preview 0.1.0-preview.1](https://github.com/ISI0007/pulseroute-network-lab/releases/tag/v0.1.0-preview.1) is **unsigned**, with source commit, SHA-256 checksum, MIT license and dependency notices. It may be blocked by Smart App Control. Sponsorship and a trusted signed release remain pending.
+
+## Workspace appearance
+Four selectable palettes (Forest, Midnight, Daylight and Ocean), responsive layouts, keyboard focus, reduced motion and adaptive idle/hidden-window refresh. See [design and verification](docs/UI_DESIGN.md). The existing published preview predates this refresh; current CI artifacts identify their source commit.

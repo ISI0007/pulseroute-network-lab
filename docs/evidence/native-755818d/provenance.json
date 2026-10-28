@@ -1,0 +1,9 @@
+{
+  "commit": "755818dc82bdab47caa7d406864f7e009b1f4bd9",
+  "runId": 40668188066,
+  "runUrl": "https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40668188066",
+  "jobId": 122748613832,
+  "artifactId": 12806564884,
+  "artifactSHA256": "f6e8bcf500fac9848a16f6af7e2ccd10b8f8c6bcfd4b21a4a7b2456a2f3de282",
+  "validation": "ZIP checksum matches GitHub artifact digest; native result PASS; source is exact CI-built Windows binary"
+}

@@ -1,4 +1,11 @@
 # Changelog
+## 2026-10-28 - Professional workspace refresh
+- Added Forest, Midnight, Daylight and Ocean palettes; preserved existing preferences and made Forest the fresh-install default.
+- Refined workspace hierarchy, navigation, status/empty states, accessible controls, keyboard focus and reduced motion.
+- Added hidden-window/idle-aware refresh scheduling and a truthful browser appearance-preview state.
+- Passed production build and 72 real frontend layout checks with 32 representative contrast checks.
+- Added backend theme persistence regression, native Windows UI Automation smoke job and two-PC LAN acceptance guide; runtime CI outcomes recorded separately.
+
 ## 2026-10-28 - Open-source signing preparation
 - Adopted MIT with explicit owner approval.
 - Added consistent Windows product/version resources and verified them in CI.

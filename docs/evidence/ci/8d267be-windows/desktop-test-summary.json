@@ -1,0 +1,11 @@
+{
+  "passed": [
+    "TestProgressRetentionAndShutdown",
+    "TestDesktopSettingsRestart",
+    "TestConcurrentOperationsDuringShutdown",
+    "TestDesktopConfirmedMessageHistory",
+    "TestThemePalettesPersistAndRejectInvalidValues"
+  ],
+  "count": 5,
+  "failures": 0
+}

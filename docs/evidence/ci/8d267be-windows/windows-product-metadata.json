@@ -1,0 +1,16 @@
+[
+  {
+    "file": "PulseRoute.exe",
+    "product": "PulseRoute",
+    "version": "0.1.0.0",
+    "fileVersion": "0.1.0.0",
+    "brand": "Zehri Developers"
+  },
+  {
+    "file": "pulseroute-cli.exe",
+    "product": "PulseRoute",
+    "version": "0.1.0.0",
+    "fileVersion": "0.1.0.0",
+    "brand": "Zehri Developers"
+  }
+]

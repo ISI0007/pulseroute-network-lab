@@ -1,0 +1,29 @@
+{
+  "commit": "8d267be864a07642ea0d23090a9c1b919f451104",
+  "runId": 40669618323,
+  "runUrl": "https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40669618323",
+  "jobs": {
+    "linuxCoreRace": "PASS",
+    "windowsCoreBackendBuild": "PASS",
+    "nativeWindowThemeReceiverSettings": "PASS"
+  },
+  "artifacts": [
+    {
+      "name": "pulseroute-windows",
+      "id": 12807917033,
+      "digest": "sha256:21cf7385c3a2ecb2fc8348a98b64a4ed0773ea0502abe24b40bc4bd2988b2f9c"
+    },
+    {
+      "name": "windows-verification",
+      "id": 12807802437,
+      "digest": "sha256:03d2592815b4fc6c6955443e9e2b2b4c680e7af5cc73c8f239a2a6dcbc5e43c4"
+    },
+    {
+      "name": "native-ui-verification",
+      "id": 12807502555,
+      "digest": "sha256:55a5b59a379d28624fddfef8b3e81981c2e5f3bf5d128ecbaf65f6d062e86281"
+    }
+  ],
+  "validation": "Artifact checksums matched GitHub metadata; JSON results and test records independently checked; executable hashes match build manifest",
+  "remaining": "Native file dialogs/drag-drop/media workflows, two-device LAN, large soak tests and trusted signing remain pending"
+}

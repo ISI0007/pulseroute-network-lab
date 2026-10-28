@@ -26,3 +26,6 @@ Real socket behavior under current core tests, 128 MiB file integrity, interrupt
 
 ## Draft artifact boundary
 The report and deck under deliverables were generated before this runtime milestone and remain historical progress drafts. Read them together with this addendum until the final academic revision. No final-submission status is claimed.
+
+## Refreshed native workspace verification
+Run [40669618323](https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40669618323), source 8d267be, passed all three jobs. The refreshed frontend has four palettes and 72 browser layout cases with 32 representative contrast checks. Five Windows desktop backend tests include palette validation/restart. The actual Wails window accepted navigation/receiver/settings/theme actions, started a TCP listener that answered a protocol ping, persisted Ocean in SQLite and shut down gracefully. Exact native JSON/screenshot/provenance: evidence/native-8d267be. Native media/file-picker/drag-drop and two-device checks remain pending. See UI_DESIGN.md for harness corrections and evidence scope.

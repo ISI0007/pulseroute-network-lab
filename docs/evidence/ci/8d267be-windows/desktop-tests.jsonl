@@ -1,0 +1,24 @@
+{"Time":"2026-10-28T10:08:55.5365617Z","Action":"start","Package":"github.com/ISI0007/pulseroute-network-lab"}
+{"Time":"2026-10-28T10:08:55.5693762Z","Action":"run","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestProgressRetentionAndShutdown"}
+{"Time":"2026-10-28T10:08:55.5693762Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestProgressRetentionAndShutdown","Output":"=== RUN   TestProgressRetentionAndShutdown\n"}
+{"Time":"2026-10-28T10:08:56.3062157Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestProgressRetentionAndShutdown","Output":"--- PASS: TestProgressRetentionAndShutdown (0.74s)\n"}
+{"Time":"2026-10-28T10:08:56.3062157Z","Action":"pass","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestProgressRetentionAndShutdown","Elapsed":0.74}
+{"Time":"2026-10-28T10:08:56.3062157Z","Action":"run","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopSettingsRestart"}
+{"Time":"2026-10-28T10:08:56.3062157Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopSettingsRestart","Output":"=== RUN   TestDesktopSettingsRestart\n"}
+{"Time":"2026-10-28T10:08:56.3495658Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopSettingsRestart","Output":"--- PASS: TestDesktopSettingsRestart (0.04s)\n"}
+{"Time":"2026-10-28T10:08:56.3502586Z","Action":"pass","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopSettingsRestart","Elapsed":0.04}
+{"Time":"2026-10-28T10:08:56.3502586Z","Action":"run","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestConcurrentOperationsDuringShutdown"}
+{"Time":"2026-10-28T10:08:56.3502586Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestConcurrentOperationsDuringShutdown","Output":"=== RUN   TestConcurrentOperationsDuringShutdown\n"}
+{"Time":"2026-10-28T10:08:56.4343707Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestConcurrentOperationsDuringShutdown","Output":"--- PASS: TestConcurrentOperationsDuringShutdown (0.08s)\n"}
+{"Time":"2026-10-28T10:08:56.4343707Z","Action":"pass","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestConcurrentOperationsDuringShutdown","Elapsed":0.08}
+{"Time":"2026-10-28T10:08:56.4343707Z","Action":"run","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopConfirmedMessageHistory"}
+{"Time":"2026-10-28T10:08:56.4343707Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopConfirmedMessageHistory","Output":"=== RUN   TestDesktopConfirmedMessageHistory\n"}
+{"Time":"2026-10-28T10:08:56.4886293Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopConfirmedMessageHistory","Output":"--- PASS: TestDesktopConfirmedMessageHistory (0.05s)\n"}
+{"Time":"2026-10-28T10:08:56.4886293Z","Action":"pass","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestDesktopConfirmedMessageHistory","Elapsed":0.05}
+{"Time":"2026-10-28T10:08:56.4886293Z","Action":"run","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestThemePalettesPersistAndRejectInvalidValues"}
+{"Time":"2026-10-28T10:08:56.4886293Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestThemePalettesPersistAndRejectInvalidValues","Output":"=== RUN   TestThemePalettesPersistAndRejectInvalidValues\n"}
+{"Time":"2026-10-28T10:08:56.5384462Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestThemePalettesPersistAndRejectInvalidValues","Output":"--- PASS: TestThemePalettesPersistAndRejectInvalidValues (0.05s)\n"}
+{"Time":"2026-10-28T10:08:56.5392001Z","Action":"pass","Package":"github.com/ISI0007/pulseroute-network-lab","Test":"TestThemePalettesPersistAndRejectInvalidValues","Elapsed":0.05}
+{"Time":"2026-10-28T10:08:56.5392001Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Output":"PASS\n"}
+{"Time":"2026-10-28T10:08:56.5441477Z","Action":"output","Package":"github.com/ISI0007/pulseroute-network-lab","Output":"ok  \tgithub.com/ISI0007/pulseroute-network-lab\t1.007s\n"}
+{"Time":"2026-10-28T10:08:56.5441477Z","Action":"pass","Package":"github.com/ISI0007/pulseroute-network-lab","Elapsed":1.008}
