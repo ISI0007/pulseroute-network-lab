@@ -1,4 +1,10 @@
 # Changelog
+## 2026-10-28 - Open-source signing preparation
+- Adopted MIT with explicit owner approval.
+- Added consistent Windows product/version resources and verified them in CI.
+- Added upstream runtime dependency notices, signing policy, privacy/removal instructions and sponsorship application draft.
+- Prepared unsigned portable CI artifacts with license, notices and exact build hashes; no sponsored signature or public release claimed.
+
 ## 2026-10-28 - Verified runtime milestone
 - Restored GitHub access and preserved the initial remote commit while uploading the project.
 - Added persisted settings/peer/results reload, lifecycle gates, bounded progress and preview reads.

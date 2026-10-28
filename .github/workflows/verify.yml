@@ -75,6 +75,15 @@ jobs:
             [ordered]@{file=$name;product=$info.ProductName;version=$info.ProductVersion;fileVersion=$info.FileVersion;brand=$info.CompanyName}
           }
           $metadata | ConvertTo-Json | Set-Content -Encoding UTF8 build/evidence/windows-product-metadata.json
+      - name: Collect notices from the actual build toolchain
+        shell: pwsh
+        run: |
+          go mod download
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $moduleCache = go env GOMODCACHE
+          $runtimeRoot = go env GOROOT
+          python scripts/collect-notices.py --module-cache $moduleCache --go-root $runtimeRoot
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Reject unsigned distribution packages
         shell: pwsh
         run: |
@@ -96,7 +105,24 @@ jobs:
         with:
           name: windows-verification
           path: build/evidence/*
+      - name: Prepare unsigned portable development artifact
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force build/portable | Out-Null
+          foreach ($name in @('PulseRoute.exe','pulseroute-cli.exe')) {
+            Copy-Item -LiteralPath "build/bin/$name" -Destination "build/portable/$name"
+          }
+          foreach ($name in @('LICENSE','THIRD_PARTY_NOTICES.txt')) {
+            Copy-Item -LiteralPath $name -Destination "build/portable/$name"
+          }
+          Copy-Item docs/UNSIGNED_PREVIEW.md build/portable/READ-ME.md
+          Copy-Item docs/PRIVACY.md build/portable/PRIVACY.md
+          Copy-Item docs/DISTRIBUTION.md build/portable/DISTRIBUTION.md
+          $files = Get-FileHash build/portable/*.exe -Algorithm SHA256 | ForEach-Object {
+            [ordered]@{file=(Split-Path $_.Path -Leaf);sha256=$_.Hash;signatureStatus=[string](Get-AuthenticodeSignature -LiteralPath $_.Path).Status}
+          }
+          [ordered]@{sourceCommit=$env:GITHUB_SHA;status='UNSIGNED development preview';files=$files} | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 build/portable/build-manifest.json
       - uses: actions/upload-artifact@v4
         with:
           name: pulseroute-windows
-          path: build/bin/*.exe
+          path: build/portable/*

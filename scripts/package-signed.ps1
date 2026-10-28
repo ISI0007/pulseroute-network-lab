@@ -54,6 +54,7 @@ foreach ($name in $names) {
 $guide = Join-Path $PSScriptRoot '../docs/DISTRIBUTION.md'
 Copy-Item -LiteralPath $guide -Destination (Join-Path $stage 'READ-ME.md')
 [ordered]@{sourceCommit=$SourceCommit; createdAtUTC=[DateTime]::UtcNow.ToString('o'); format='portable Windows x64 ZIP; not a setup installer'; files=$records; validation='Authenticode policy and timestamp verification on packaging host; target Smart App Control/native/LAN tests remain required'} | ConvertTo-Json -Depth 6 | Set-Content -Encoding UTF8 (Join-Path $stage 'signature-manifest.json')
+foreach ($notice in @('LICENSE','THIRD_PARTY_NOTICES.txt')) { Copy-Item -LiteralPath (Join-Path $PSScriptRoot ('../' + $notice)) -Destination (Join-Path $stage $notice) }
 $archive = Join-Path $OutputDirectory ('PulseRoute-windows-x64-' + $SourceCommit.Substring(0,8) + '-' + [guid]::NewGuid().ToString('N').Substring(0,8) + '.zip')
-Compress-Archive -LiteralPath (Join-Path $stage 'PulseRoute.exe'),(Join-Path $stage 'pulseroute-cli.exe'),(Join-Path $stage 'READ-ME.md'),(Join-Path $stage 'signature-manifest.json') -DestinationPath $archive
+Compress-Archive -LiteralPath (Join-Path $stage 'PulseRoute.exe'),(Join-Path $stage 'pulseroute-cli.exe'),(Join-Path $stage 'READ-ME.md'),(Join-Path $stage 'signature-manifest.json'),(Join-Path $stage 'LICENSE'),(Join-Path $stage 'THIRD_PARTY_NOTICES.txt') -DestinationPath $archive
 Get-FileHash -LiteralPath $archive -Algorithm SHA256 | Select-Object Path,Hash,Algorithm

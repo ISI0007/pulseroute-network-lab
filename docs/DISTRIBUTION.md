@@ -41,3 +41,6 @@ Official pages:
 - https://signpath.org/terms
 
 Suggested provider inquiry (not sent): Can you issue a publicly trusted Windows Authenticode code-signing certificate to me as an individual developer? Which legal name will be shown, what documents are accepted, and what is the complete cost including secure key storage and signing access? Supply location and identity details privately to the provider when required.
+
+## Free sponsorship preparation
+The owner selected exploration of free open-source sponsorship and approved MIT. See SPONSORSHIP_APPLICATION_DRAFT.md for the current draft/checklist, CODE_SIGNING_POLICY.md for release responsibilities and PRIVACY.md for data/removal behavior. No sponsored certificate has been granted.

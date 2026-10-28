@@ -24,7 +24,9 @@ Updated 28 October 2026. Active project: D:\Project\PulseRoute\pulseroute-networ
 | Two-device LAN, 8 GiB, soak and controlled performance comparisons | NOT VERIFIED | Need devices and permitted native execution |
 | Draft report/slides/diagrams | PASS: previous artifact checks | Generated before this CI milestone; see CI_VERIFICATION.md for the current addendum |
 | GitHub synchronization | PASS | Full history preserved and published on main and codex/pulseroute-foundation |
-| License and academic identity | PENDING | Owner's details not supplied |
+| License | PASS | Owner approved MIT; root LICENSE published |
+| Free signing sponsorship | PENDING | Policy/application drafts prepared; no acceptance or signature |
+| Academic identity | PENDING | Owner's details not supplied |
 
 ## Current features
 Node settings, known peers and recent benchmark results restore from SQLite. Shutdown cancels tracked operations and rejects new database work. Transfer state and preview reads are bounded. Handshakes cancel promptly. UDP replies must match a per-experiment cookie and payload. Desktop Send waits for server acceptance and displays the socket-write count; this is not human-read confirmation. Lost acknowledgment outcomes remain unknown and are not automatically retried.
@@ -34,3 +36,6 @@ Raw logs include test names and outcomes. Experiment CSV, plots, reproduction co
 
 ## Historical failures
 PowerShell npm.ps1 authorization and sandbox TEMP failures were resolved by the ordinary npm.cmd entry point and authorized D: temporary directories. Earlier browser and event-log sandbox restrictions were resolved through approved read-only/tool execution. The new compiler SAC block was not bypassed; CI supplied an independent approved runtime. No security controls were changed.
+
+## Free signing preparation
+The owner approved MIT. Both Windows executables now carry consistent product/version metadata, verified in successful run 40628906942 (e6d1f83). Signing policy, privacy/removal guidance, dependency notice inventory and an unsubmitted application draft are present. Private keys, personal enrollment facts and contact details are not published. A provider application and an official release still require owner review/approval.

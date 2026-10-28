@@ -19,3 +19,5 @@ __pycache__/
 
 # Generated Windows resources
 *.syso
+
+/build/portable/

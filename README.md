@@ -56,3 +56,6 @@ Licensed under [MIT](LICENSE), approved by the owner on 28 October 2026. Depende
 
 ## Signed distribution
 [Signing and portable packaging](docs/DISTRIBUTION.md) is prepared. Trusted signing is pending an eligible verified publisher identity; existing build artifacts remain unsigned. Zehri Developers is the product brand, not yet a verified certificate publisher.
+
+## Code signing policy
+[Code signing policy](docs/CODE_SIGNING_POLICY.md) - [Privacy and removal](docs/PRIVACY.md) - [Sponsorship application draft](docs/SPONSORSHIP_APPLICATION_DRAFT.md). Free sponsorship is being explored; approval and signed releases are pending.

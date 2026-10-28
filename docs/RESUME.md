@@ -20,6 +20,7 @@ Smart App Control VerifiedAndReputableDesktop blocks local Go test/CLI launches 
 2. Two-device LAN and larger/soak experiments; record environments and samples. Existing hosted loopback is not a link-capacity benchmark.
 3. Decide whether optional hub file forwarding/download and transfer resume are needed for final scope. Existing direct uploads and hub chat are implemented.
 4. Revise report DOCX/PDF and presentation into a final submission using the measured evidence/addendum; existing artifacts are earlier progress drafts.
-5. Obtain license and academic identity details. No license was invented.
+5. MIT was approved and published. Obtain the remaining academic identity details.
+6. Continue free signing preparation using SPONSORSHIP_APPLICATION_DRAFT.md. Windows product/version metadata passed CI run 40628906942; license notices and privacy/signing policies are prepared. Do not claim sponsorship or publish a release until approved.
 
 Workflow runs on main source changes and pull requests, skips documentation-only pushes, and retains raw logs/loopback results. Avoid pushing repeated source changes while checking a run because newer runs cancel older ones. Preserve history; never force-push.
