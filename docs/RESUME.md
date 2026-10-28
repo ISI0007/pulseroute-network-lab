@@ -1,35 +1,25 @@
 # PulseRoute continuation checkpoint
-Updated 28 October 2026. The user resumed development; the earlier pause is no longer active.
+Updated 28 October 2026 after successful CI runtime validation.
 
-## Active location
+## Active locations
 Project: D:\Project\PulseRoute\pulseroute-network-lab.
-Toolchain, caches, temporary files, browser dependency and Python libraries: D:\Project\PulseRoute\work.
-Go: work\go\bin. GOCACHE: work\gocache. GOPATH: work\modules. TEMP/TMP: work\tmp.
-Python document tools: D:\tools\venv\Scripts\python.exe with PYTHONPATH=D:\Project\PulseRoute\work\python-libs.
-All project work remains on D:. Do not delete unrelated C: remnants.
+Tools/caches/temp/browser/Python libs: D:\Project\PulseRoute\work.
+Documents Python: D:\tools\venv\Scripts\python.exe with PYTHONPATH= D:\Project\PulseRoute\work\python-libs and MPLCONFIGDIR=work\matplotlib.
+Keep project work on D: and preserve unrelated files.
 
-## Current state
-Networking, SQLite, desktop bridge and six-screen frontend implemented. This checkpoint adds persisted node settings, peer/result restoration, lifecycle cancellation, bounded transfer state, bounded preview reads and connection deadlines. Current source compiles; runtime remains unverified after historical passes.
+## Verified state
+Core networking, SQLite, discovery and experiments passed on Linux (with race detection) and Windows. Four Windows desktop backend tests passed. Source commit 4ef6e0c; run 40626295936. Raw logs/provenance: docs/evidence/ci/4ef6e0c. Twenty actual loopback runs were independently recalculated; results in docs/experiments/4ef6e0c.
 
-Draft report DOCX/PDF, 16-slide PPTX with notes, ten diagrams and frontend screenshots are in deliverables and docs. These explicitly state remaining limitations. Native PowerPoint rendering and document structure checks passed.
+Latest changes: persisted settings/history reload, bounded state/preview reads, lifecycle cancellation, 128 MiB streamed integrity regression, active cancellation cleanup, UDP cookie validation/impairment tests, and correlated message confirmations. UI displays server acceptance/socket-write count and never claims human reading. Source and evidence are pushed to main and codex/pulseroute-foundation.
 
-## Confirmed blocker
-CodeIntegrity event 3077 records 14737 (CLI) and 14722 (store test) identify Smart App Control policy VerifiedAndReputableDesktop, GUID {0283ac0f-fff1-49ae-ada1-8a933130cad6}. See WINDOWS_APPLICATION_CONTROL.md and selected JSON evidence. Do not repeat blocked executions without a meaningful policy/signing change. Never disable controls, add bypasses, or infer that conversational permission changes Windows policy. SAC has no individual-app exception; trusted signing or an approved independent development/CI environment is required.
+## Local restriction
+Smart App Control VerifiedAndReputableDesktop blocks local Go test/CLI launches and now go.exe itself. Compiler event 3077 record 14769 on October 28; evidence JSON retained. Do not retry blocked commands without a meaningful authorized signing/policy change. Do not disable controls, add exclusions or bypass policy. Use GitHub Actions for Go runtime/static/build validation. gofmt and signed Chrome frontend smoke tests remained permitted. Root Linux race tests and Windows desktop backend tests run in CI. Conversational approval does not change Windows policy.
 
-GitHub access was restored on 28 October 2026. All saved commits were pushed to main and codex/pulseroute-foundation, preserving the initial remote README history through merge commit 989efd4. Verify GitHub Actions results before claiming runtime tests pass. License choice remains unanswered.
+## Remaining work
+1. Native Wails/WebView2 interaction tests: window launch, real dialogs, drag/drop, queue/cancel, preview and end-user settings workflow. Backend tests do not cover these.
+2. Two-device LAN and larger/soak experiments; record environments and samples. Existing hosted loopback is not a link-capacity benchmark.
+3. Decide whether optional hub file forwarding/download and transfer resume are needed for final scope. Existing direct uploads and hub chat are implemented.
+4. Revise report DOCX/PDF and presentation into a final submission using the measured evidence/addendum; existing artifacts are earlier progress drafts.
+5. Obtain license and academic identity details. No license was invented.
 
-## Verification boundary
-PASS: final vet checks, internal/desktop test compilation, production builds, frontend six-screen smoke test, Python SQLite schema test, document validation and native slide rendering.
-BLOCKED: Go runtime and race tests.
-NOT VERIFIED: native desktop workflows, Go SQLite driver/restart tests, two-device LAN, large transfers, soak and performance data.
-Frontend screenshots have a bridge-unavailable banner and are not native screenshots. No synthetic timing claims.
-
-## Next work
-1. Obtain an approved runtime/signing or CI route and run current Go tests, then fix failures.
-2. Inspect GitHub Actions runs and fix any actual runtime/test failures.
-3. Exercise settings restart, cancellation/shutdown, reconnect, queue, discovery, previews and two-device transfers.
-4. Implement missing hub file relay/download and recovery according to the original specification.
-5. Capture reproducible raw benchmarks and native screenshots; revise drafts into a final submission.
-6. Obtain the owner's license and academic identity details.
-
-See PROGRESS.md for per-check status. Historical passing tests do not validate current changes.
+Workflow runs on main source changes and pull requests, skips documentation-only pushes, and retains raw logs/loopback results. Avoid pushing repeated source changes while checking a run because newer runs cancel older ones. Preserve history; never force-push.

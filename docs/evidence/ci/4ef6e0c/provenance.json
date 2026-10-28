@@ -1,0 +1,57 @@
+{
+  "commit": "4ef6e0c52184e0817ca9b28cac6e7e00b36d7337",
+  "runId": 40626295936,
+  "runUrl": "https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40626295936",
+  "jobs": {
+    "core": {
+      "id": 122611978201,
+      "conclusion": "success",
+      "scope": "Linux go test -race ./... and vet; loopback selftest"
+    },
+    "windows": {
+      "id": 122611977755,
+      "conclusion": "success",
+      "scope": "Core tests, desktop backend tests, frontend build, desktop vet and executable builds; loopback selftest"
+    }
+  },
+  "artifacts": [
+    {
+      "id": 12789422831,
+      "name": "windows-verification",
+      "size_in_bytes": 6071,
+      "url": "https://api.github.com/repos/ISI0007/pulseroute-network-lab/actions/artifacts/12789422831",
+      "archive_download_url": "https://api.github.com/repos/ISI0007/pulseroute-network-lab/actions/artifacts/12789422831/zip",
+      "expired": false,
+      "created_at": "2026-10-28T03:24:20Z",
+      "expires_at": "2027-01-26T03:22:19Z",
+      "updated_at": "2026-10-28T03:24:20Z",
+      "digest": "sha256:c1d1f49ee0a9bf6b6c4f80d85d5a12b0dc4043bf3d3dd3272d677bc14601effe",
+      "workflow_run": {
+        "id": 40626295936,
+        "repository_id": 1436046099,
+        "head_repository_id": 1436046099,
+        "head_branch": "main",
+        "head_sha": "4ef6e0c52184e0817ca9b28cac6e7e00b36d7337"
+      }
+    },
+    {
+      "id": 12789064642,
+      "name": "linux-verification",
+      "size_in_bytes": 10106,
+      "url": "https://api.github.com/repos/ISI0007/pulseroute-network-lab/actions/artifacts/12789064642",
+      "archive_download_url": "https://api.github.com/repos/ISI0007/pulseroute-network-lab/actions/artifacts/12789064642/zip",
+      "expired": false,
+      "created_at": "2026-10-28T03:22:58Z",
+      "expires_at": "2027-01-26T03:22:19Z",
+      "updated_at": "2026-10-28T03:22:58Z",
+      "digest": "sha256:f9f76a94470b2bd3fe2c0639a42e55eab2e6abde776e42b46a164d604aad2fda",
+      "workflow_run": {
+        "id": 40626295936,
+        "repository_id": 1436046099,
+        "head_repository_id": 1436046099,
+        "head_branch": "main",
+        "head_sha": "4ef6e0c52184e0817ca9b28cac6e7e00b36d7337"
+      }
+    }
+  ]
+}

@@ -22,3 +22,6 @@ ETA = remainingBytes / bytesPerSecond, only when the measured rate is positive.
 Hash preparation is a separate state. Buffered writes are not recipient verification. A final SHA-256 acknowledgment determines verified completion. Terminal samples and progress entries are bounded.
 ## Operating-system TCP
 The OS implements TCP retransmission, ordering, congestion control and flow control. PulseRoute neither implements nor selects Tahoe, Reno or CUBIC. Its application frame/chunk size is not the TCP congestion window.
+
+## Reproducible empirical checks
+Twenty hosted loopback experiments are retained under evidence/ci/4ef6e0c. scripts/analyze-experiments.py independently recalculates delivered sequences, loss, duplicate/out-of-order counts, RTT, smoothed RTT variation and payload goodput, then emits CSV and measured charts. Medians and nearest-rank 95th-percentile RTTs are calculated from actual observed samples. These measurements do not estimate physical link capacity.

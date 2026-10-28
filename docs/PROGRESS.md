@@ -1,39 +1,36 @@
 # Progress and verification
-Updated 28 October 2026 after the user's request to continue. Active project: D:\Project\PulseRoute\pulseroute-network-lab.
+Updated 28 October 2026. Active project: D:\Project\PulseRoute\pulseroute-network-lab.
 
-**Unfinished development checkpoint, not a final submission.** PASS means the named check succeeded; FAIL means an attempted check failed; BLOCKED means a restriction prevented validation; NOT VERIFIED means no relevant successful runtime test.
+**Working development checkpoint; final native demonstration and two-device validation remain unfinished.**
 
-| Check | Status | Scope |
+## Verified CI milestone
+[Run 40626295936](https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40626295936), source commit 4ef6e0c52184e0817ca9b28cac6e7e00b36d7337: both jobs succeeded. Selected raw artifacts, checksums, test logs and provenance are retained under evidence/ci/4ef6e0c.
+
+| Check | Status | Evidence and scope |
 |---|---|---|
-| TCP framing, eight clients, file integrity and cleanup | PASS at earlier revision | Historical core tests; not regression evidence for current source |
-| TCP/UDP loopback | PASS at earlier revision | 20/20 replies each; no raw performance series retained |
-| Current Go runtime suite and CLI self-test | BLOCKED | Smart App Control event 3077; not rerun |
-| Go static checks | PASS | go vet ./... and go vet -tags desktop . |
-| Internal and desktop test compilation | PASS | go test -c; binaries were NOT executed |
-| CLI and desktop production compilation | PASS | Final builds include current frontend; unsigned |
-| TypeScript/Vite build | PASS | npm.cmd run build; 1,578 modules |
-| SQL schema validation | PASS | Python SQLite actual migration: rollback, foreign keys, reopen, integrity; not Go driver validation |
-| Frontend six-screen smoke checks | PASS | Installed signed Chrome; no JS errors; bridge unavailable, no mocked application data |
-| Desktop bridge, settings restart, discovery, reconnect | NOT VERIFIED | Implementation and tests compile; native runtime blocked |
-| Race detector | BLOCKED | CGO/C compiler prerequisite absent |
-| Two-device LAN, 8 GiB, soak and performance runs | NOT VERIFIED | Need approved runtime and devices |
-| Report DOCX/PDF | PASS: artifact checks | Draft, 22 sections, 10 PDF pages; ZIP/parser and PDF image bounds checks |
-| Presentation | PASS: artifact checks | Draft, 16 slides, speaker notes, native PowerPoint rendering |
-| Diagrams | PASS: generation | Ten diagrams, each Mermaid/SVG/PNG; diagrams describe current boundaries |
-| Windows policy attribution | PASS | Selected CodeIntegrity records identify VerifiedAndReputableDesktop/SAC |
-| GitHub push | PASS | Access restored 28 October; full history pushed to main and codex/pulseroute-foundation; initial remote commit preserved |
-| License | NOT IMPLEMENTED | Owner's choice pending |
+| Linux core tests with race detector | PASS | 27 test/subtest pass records, zero failures; go test -json -race ./... -count=1 |
+| Windows core tests | PASS | Same 27 test/subtest outcomes; includes Go SQLite migrations/settings/history and LAN discovery over loopback |
+| Windows desktop backend tests | PASS | Four tests: settings restart, bounded progress, concurrent shutdown and persisted message confirmation |
+| Streamed 128 MiB file | PASS | Streaming source generation and received SHA-256/length verification; no whole-file buffer; no speed improvement claimed |
+| Active cancellation and failed-history cleanup | PASS | Receiver partial/destination cleanup asserted after shutdown |
+| Concurrent confirmed messages | PASS | 16 correlated acknowledgments with two client sessions; rejection and pre-send cancellation tests |
+| UDP impairment handling | PASS | Actual datagram fixtures exercise delayed, duplicated, altered and missing replies plus cancellation |
+| Static analysis and production builds | PASS | Linux vet; desktop vet; TypeScript/Vite; Windows CLI and Wails builds in CI |
+| Real loopback experiments | PASS | 20 runs, 100 probes/run, 1024-byte payload; Windows/Linux TCP/UDP; 2000/2000 unique replies |
+| Independent metric recalculation | PASS | Raw samples reproduce received count, loss, duplicates, ordering, mean RTT, jitter and echo goodput |
+| Frontend six-screen smoke checks | PASS | Signed Chrome; no JS errors; no mocked Go bridge; frontend rendering only |
+| Local Go execution | BLOCKED | SAC now also blocks go.exe; event 3077 record 14769; no repeat after block |
+| Native Wails/WebView workflows | NOT VERIFIED | Backend tests and build do not establish native window/dialog/drop/preview behavior |
+| Two-device LAN, 8 GiB, soak and controlled performance comparisons | NOT VERIFIED | Need devices and permitted native execution |
+| Draft report/slides/diagrams | PASS: previous artifact checks | Generated before this CI milestone; see CI_VERIFICATION.md for the current addendum |
+| GitHub synchronization | PASS | Full history preserved and published on main and codex/pulseroute-foundation |
+| License and academic identity | PENDING | Owner's details not supplied |
 
-## Changes in this checkpoint
-Node settings now persist and reload; known peers and recent benchmark results restore on startup. Shutdown cancels outstanding operations and prevents new work from entering. Transfer progress is bounded. Preview reads have a hard size limit. TCP handshakes react to cancellation and readers have a silence timeout. Frontend source is formatted and settings can be saved.
+## Current features
+Node settings, known peers and recent benchmark results restore from SQLite. Shutdown cancels tracked operations and rejects new database work. Transfer state and preview reads are bounded. Handshakes cancel promptly. UDP replies must match a per-experiment cookie and payload. Desktop Send waits for server acceptance and displays the socket-write count; this is not human-read confirmation. Lost acknowledgment outcomes remain unknown and are not automatically retried.
 
-See evidence JSON and screenshots in docs/evidence. Browser screenshots verify frontend rendering only. New Go regression tests were compiled, not run.
+## Evidence and limits
+Raw logs include test names and outcomes. Experiment CSV, plots, reproduction command and interpretation limits are in experiments/4ef6e0c. Hosted loopback is not physical link capacity or a controlled Windows-versus-Linux comparison. Existing report/PPT drafts predate these results and remain drafts. Hub file relay/download, resume/crash reconciliation, encryption and authentication are not implemented.
 
-## Failed checks and recovery
-An invocation of npm resolved to npm.ps1 and failed PowerShell authorization; the installed npm.cmd entry point completed the build. No execution-policy setting was changed. Earlier browser sandbox launch failures were resolved by approved execution of signed Chrome outside the tool sandbox, with Chromium sandboxing retained. Earlier event-log access failures were resolved by an approved read-only query outside the tool sandbox.
-
-## Remaining scope
-Current runtime/race/LAN validation, hub-mediated file relay/download, stronger recovery, measured benchmark data and final academic submission remain unfinished. No security control was disabled or bypassed.
-
-## GitHub synchronization
-Access restored on 28 October 2026. Implementation and academic checkpoint commits were uploaded in merge commit 989efd4, preserving initial remote commit 33c7e0e. GitHub Actions results must be read separately; successful upload is not a test pass.
+## Historical failures
+PowerShell npm.ps1 authorization and sandbox TEMP failures were resolved by the ordinary npm.cmd entry point and authorized D: temporary directories. Earlier browser and event-log sandbox restrictions were resolved through approved read-only/tool execution. The new compiler SAC block was not bypassed; CI supplied an independent approved runtime. No security controls were changed.

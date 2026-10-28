@@ -1,0 +1,7163 @@
+{
+  "environment": {
+    "arch": "amd64",
+    "go": "go1.26.0",
+    "impairment": "none injected",
+    "method": "sequential application echo",
+    "network": "loopback",
+    "os": "windows"
+  },
+  "recordedAt": "2026-10-28T03:24:20.179111Z",
+  "runs": [
+    {
+      "protocol": "tcp",
+      "address": "127.0.0.1:60525",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.032281000000000004,
+      "jitterMs": 0.07979057698878732,
+      "mbps": 253.77156841485706,
+      "durationMs": 3.2281,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0.5718,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0.5303,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0.3657,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0.7145,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0.5234,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0.5224,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "udp",
+      "address": "127.0.0.1:59225",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.017334000000000002,
+      "jitterMs": 0.029644201921532203,
+      "mbps": 472.5972077997,
+      "durationMs": 1.7334,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0.6413,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0.4838,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0.6083,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "tcp",
+      "address": "127.0.0.1:60525",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.029585,
+      "jitterMs": 0.04243036266874616,
+      "mbps": 276.89707622105794,
+      "durationMs": 2.9585,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0.7548,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0.5525,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0.5083,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0.5888,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0.5541,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "udp",
+      "address": "127.0.0.1:59225",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.01592,
+      "jitterMs": 0.010893720357766278,
+      "mbps": 514.572864321608,
+      "durationMs": 1.592,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0.6219,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0.5364,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0.4337,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "tcp",
+      "address": "127.0.0.1:60525",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.039968000000000004,
+      "jitterMs": 0.04693468257825298,
+      "mbps": 204.96397117694156,
+      "durationMs": 3.9968,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0.5905,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0.4934,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0.6572,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0.5639,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0.5823,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0.3095,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0.8,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "udp",
+      "address": "127.0.0.1:59225",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.017139,
+      "jitterMs": 0.015375116660900974,
+      "mbps": 477.9742108641111,
+      "durationMs": 1.7139,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0.354,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0.3034,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0.5124,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0.5441,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "tcp",
+      "address": "127.0.0.1:60525",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.033651999999999994,
+      "jitterMs": 0.04327618737623608,
+      "mbps": 243.43278259835967,
+      "durationMs": 3.3652,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0.5603,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0.5968,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0.4439,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0.6626,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0.5475,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0.5541,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "udp",
+      "address": "127.0.0.1:59225",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.01696,
+      "jitterMs": 0.01928512346041414,
+      "mbps": 483.0188679245283,
+      "durationMs": 1.696,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0.6065,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0.563,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0.5265,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "tcp",
+      "address": "127.0.0.1:60525",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.033373999999999994,
+      "jitterMs": 0.06192417717767279,
+      "mbps": 245.460538143465,
+      "durationMs": 3.3374,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0.616,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0.5771,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0.5351,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0.533,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0.3865,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0.6897,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "protocol": "udp",
+      "address": "127.0.0.1:59225",
+      "sent": 100,
+      "received": 100,
+      "duplicates": 0,
+      "outOfOrder": 0,
+      "lossPercent": 0,
+      "rttMs": 0.016442000000000002,
+      "jitterMs": 0.04690662087124987,
+      "mbps": 498.2362243036127,
+      "durationMs": 1.6442,
+      "samples": [
+        {
+          "sequence": 0,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 0,
+          "bytes": 1024
+        },
+        {
+          "sequence": 1,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 1,
+          "bytes": 1024
+        },
+        {
+          "sequence": 2,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 2,
+          "bytes": 1024
+        },
+        {
+          "sequence": 3,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 3,
+          "bytes": 1024
+        },
+        {
+          "sequence": 4,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 4,
+          "bytes": 1024
+        },
+        {
+          "sequence": 5,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 5,
+          "bytes": 1024
+        },
+        {
+          "sequence": 6,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 6,
+          "bytes": 1024
+        },
+        {
+          "sequence": 7,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 7,
+          "bytes": 1024
+        },
+        {
+          "sequence": 8,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 8,
+          "bytes": 1024
+        },
+        {
+          "sequence": 9,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 9,
+          "bytes": 1024
+        },
+        {
+          "sequence": 10,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 10,
+          "bytes": 1024
+        },
+        {
+          "sequence": 11,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 11,
+          "bytes": 1024
+        },
+        {
+          "sequence": 12,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 12,
+          "bytes": 1024
+        },
+        {
+          "sequence": 13,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 13,
+          "bytes": 1024
+        },
+        {
+          "sequence": 14,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 14,
+          "bytes": 1024
+        },
+        {
+          "sequence": 15,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 15,
+          "bytes": 1024
+        },
+        {
+          "sequence": 16,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 16,
+          "bytes": 1024
+        },
+        {
+          "sequence": 17,
+          "rttMs": 0.5937,
+          "received": true,
+          "arrival": 17,
+          "bytes": 1024
+        },
+        {
+          "sequence": 18,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 18,
+          "bytes": 1024
+        },
+        {
+          "sequence": 19,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 19,
+          "bytes": 1024
+        },
+        {
+          "sequence": 20,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 20,
+          "bytes": 1024
+        },
+        {
+          "sequence": 21,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 21,
+          "bytes": 1024
+        },
+        {
+          "sequence": 22,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 22,
+          "bytes": 1024
+        },
+        {
+          "sequence": 23,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 23,
+          "bytes": 1024
+        },
+        {
+          "sequence": 24,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 24,
+          "bytes": 1024
+        },
+        {
+          "sequence": 25,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 25,
+          "bytes": 1024
+        },
+        {
+          "sequence": 26,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 26,
+          "bytes": 1024
+        },
+        {
+          "sequence": 27,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 27,
+          "bytes": 1024
+        },
+        {
+          "sequence": 28,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 28,
+          "bytes": 1024
+        },
+        {
+          "sequence": 29,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 29,
+          "bytes": 1024
+        },
+        {
+          "sequence": 30,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 30,
+          "bytes": 1024
+        },
+        {
+          "sequence": 31,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 31,
+          "bytes": 1024
+        },
+        {
+          "sequence": 32,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 32,
+          "bytes": 1024
+        },
+        {
+          "sequence": 33,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 33,
+          "bytes": 1024
+        },
+        {
+          "sequence": 34,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 34,
+          "bytes": 1024
+        },
+        {
+          "sequence": 35,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 35,
+          "bytes": 1024
+        },
+        {
+          "sequence": 36,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 36,
+          "bytes": 1024
+        },
+        {
+          "sequence": 37,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 37,
+          "bytes": 1024
+        },
+        {
+          "sequence": 38,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 38,
+          "bytes": 1024
+        },
+        {
+          "sequence": 39,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 39,
+          "bytes": 1024
+        },
+        {
+          "sequence": 40,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 40,
+          "bytes": 1024
+        },
+        {
+          "sequence": 41,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 41,
+          "bytes": 1024
+        },
+        {
+          "sequence": 42,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 42,
+          "bytes": 1024
+        },
+        {
+          "sequence": 43,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 43,
+          "bytes": 1024
+        },
+        {
+          "sequence": 44,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 44,
+          "bytes": 1024
+        },
+        {
+          "sequence": 45,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 45,
+          "bytes": 1024
+        },
+        {
+          "sequence": 46,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 46,
+          "bytes": 1024
+        },
+        {
+          "sequence": 47,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 47,
+          "bytes": 1024
+        },
+        {
+          "sequence": 48,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 48,
+          "bytes": 1024
+        },
+        {
+          "sequence": 49,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 49,
+          "bytes": 1024
+        },
+        {
+          "sequence": 50,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 50,
+          "bytes": 1024
+        },
+        {
+          "sequence": 51,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 51,
+          "bytes": 1024
+        },
+        {
+          "sequence": 52,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 52,
+          "bytes": 1024
+        },
+        {
+          "sequence": 53,
+          "rttMs": 0.5272,
+          "received": true,
+          "arrival": 53,
+          "bytes": 1024
+        },
+        {
+          "sequence": 54,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 54,
+          "bytes": 1024
+        },
+        {
+          "sequence": 55,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 55,
+          "bytes": 1024
+        },
+        {
+          "sequence": 56,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 56,
+          "bytes": 1024
+        },
+        {
+          "sequence": 57,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 57,
+          "bytes": 1024
+        },
+        {
+          "sequence": 58,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 58,
+          "bytes": 1024
+        },
+        {
+          "sequence": 59,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 59,
+          "bytes": 1024
+        },
+        {
+          "sequence": 60,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 60,
+          "bytes": 1024
+        },
+        {
+          "sequence": 61,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 61,
+          "bytes": 1024
+        },
+        {
+          "sequence": 62,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 62,
+          "bytes": 1024
+        },
+        {
+          "sequence": 63,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 63,
+          "bytes": 1024
+        },
+        {
+          "sequence": 64,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 64,
+          "bytes": 1024
+        },
+        {
+          "sequence": 65,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 65,
+          "bytes": 1024
+        },
+        {
+          "sequence": 66,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 66,
+          "bytes": 1024
+        },
+        {
+          "sequence": 67,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 67,
+          "bytes": 1024
+        },
+        {
+          "sequence": 68,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 68,
+          "bytes": 1024
+        },
+        {
+          "sequence": 69,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 69,
+          "bytes": 1024
+        },
+        {
+          "sequence": 70,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 70,
+          "bytes": 1024
+        },
+        {
+          "sequence": 71,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 71,
+          "bytes": 1024
+        },
+        {
+          "sequence": 72,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 72,
+          "bytes": 1024
+        },
+        {
+          "sequence": 73,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 73,
+          "bytes": 1024
+        },
+        {
+          "sequence": 74,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 74,
+          "bytes": 1024
+        },
+        {
+          "sequence": 75,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 75,
+          "bytes": 1024
+        },
+        {
+          "sequence": 76,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 76,
+          "bytes": 1024
+        },
+        {
+          "sequence": 77,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 77,
+          "bytes": 1024
+        },
+        {
+          "sequence": 78,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 78,
+          "bytes": 1024
+        },
+        {
+          "sequence": 79,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 79,
+          "bytes": 1024
+        },
+        {
+          "sequence": 80,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 80,
+          "bytes": 1024
+        },
+        {
+          "sequence": 81,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 81,
+          "bytes": 1024
+        },
+        {
+          "sequence": 82,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 82,
+          "bytes": 1024
+        },
+        {
+          "sequence": 83,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 83,
+          "bytes": 1024
+        },
+        {
+          "sequence": 84,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 84,
+          "bytes": 1024
+        },
+        {
+          "sequence": 85,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 85,
+          "bytes": 1024
+        },
+        {
+          "sequence": 86,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 86,
+          "bytes": 1024
+        },
+        {
+          "sequence": 87,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 87,
+          "bytes": 1024
+        },
+        {
+          "sequence": 88,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 88,
+          "bytes": 1024
+        },
+        {
+          "sequence": 89,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 89,
+          "bytes": 1024
+        },
+        {
+          "sequence": 90,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 90,
+          "bytes": 1024
+        },
+        {
+          "sequence": 91,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 91,
+          "bytes": 1024
+        },
+        {
+          "sequence": 92,
+          "rttMs": 0.5233,
+          "received": true,
+          "arrival": 92,
+          "bytes": 1024
+        },
+        {
+          "sequence": 93,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 93,
+          "bytes": 1024
+        },
+        {
+          "sequence": 94,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 94,
+          "bytes": 1024
+        },
+        {
+          "sequence": 95,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 95,
+          "bytes": 1024
+        },
+        {
+          "sequence": 96,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 96,
+          "bytes": 1024
+        },
+        {
+          "sequence": 97,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 97,
+          "bytes": 1024
+        },
+        {
+          "sequence": 98,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 98,
+          "bytes": 1024
+        },
+        {
+          "sequence": 99,
+          "rttMs": 0,
+          "received": true,
+          "arrival": 99,
+          "bytes": 1024
+        }
+      ]
+    }
+  ]
+}

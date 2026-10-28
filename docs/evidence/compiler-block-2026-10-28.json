@@ -1,0 +1,13 @@
+{
+  "timeUTC": "2026-10-28T03:17:55.5347912Z",
+  "error": "Program go.exe failed to run: An Application Control policy has blocked this file",
+  "eventID": 3077,
+  "policyGUID": "{0283ac0f-fff1-49ae-ada1-8a933130cad6}",
+  "flatSHA256": "83B7BA66215E696414FA49462D0DB2DA4F4CF15C7BEBD42F0B189FA04866999D",
+  "file": "D:\\Project\\PulseRoute\\work\\go\\bin\\go.exe",
+  "command": "go vet ./cmd/pulseroute",
+  "action": "No retry; subsequent Go validation performed in GitHub CI",
+  "policyName": "VerifiedAndReputableDesktop",
+  "status": "0xc0e90002",
+  "recordID": 14769
+}

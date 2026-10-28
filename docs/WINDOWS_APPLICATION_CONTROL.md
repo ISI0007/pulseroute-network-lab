@@ -66,3 +66,8 @@ An administrator should use Event Viewer to filter the relevant logs around 26 O
 - [App Control troubleshooting and correlation](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/operations/appcontrol-debugging-and-troubleshooting)
 - [WDAC rule levels and PE hashes](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/design/select-types-of-rules-to-create)
 - [AppLocker event IDs](https://learn.microsoft.com/windows/security/application-security/application-control/app-control-for-business/applocker/using-event-viewer-with-applocker)
+
+## October 28 compiler block and approved CI validation
+A later normal static-check invocation, go vet ./cmd/pulseroute, was blocked before the compiler started: D:\Project\PulseRoute\work\go\bin\go.exe. PowerShell reported: Program go.exe failed to run: An Application Control policy has blocked this file. CodeIntegrity event 3077, record 14769, UTC 2026-10-28T03:17:55.5347912Z identifies the same VerifiedAndReputableDesktop policy and status 0xc0e90002. Selected evidence: evidence/compiler-block-2026-10-28.json. The command was not retried. Formatting and signed Chrome remained permitted.
+
+GitHub-hosted Linux and Windows runners subsequently passed the current tests, static checks and builds. This independent approved environment does not modify or bypass the local policy. See CI_VERIFICATION.md for exact commit, run and raw evidence. Local native execution remains unverified.

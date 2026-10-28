@@ -1,5 +1,15 @@
 # Changelog
-## 0.1.0 development checkpoint ? 2026-10-26
+## 2026-10-28 - Verified runtime milestone
+- Restored GitHub access and preserved the initial remote commit while uploading the project.
+- Added persisted settings/peer/results reload, lifecycle gates, bounded progress and preview reads.
+- Added correlated message confirmation and UI socket-write counts.
+- Added UDP per-run cookies, altered-reply rejection and actual loss/duplicate/delay fixtures.
+- Passed Linux race and Windows core tests, four desktop backend tests, production builds, 128 MiB integrity and cancellation regressions in hosted CI.
+- Retained and independently recalculated 20 real loopback experiments with CSV, plots and artifact provenance.
+- Local Smart App Control still blocks execution, including the compiler; no controls changed.
+- Existing academic artifacts remain drafts; current verification addendum documents new evidence.
+
+## 0.1.0 development checkpoint - 2026-10-26
 - Added tested initial TCP framing, concurrent chat and streamed SHA-256 file transfer.
 - Added TCP/UDP echo experiments, discovery, SQLite migration/store and CLI.
 - Implemented Wails service and six React desktop screens; production assets and Windows executables compile.

@@ -1,0 +1,78 @@
+{
+  "desktop-tests.jsonl": {
+    "passedTestsAndSubtests": 4,
+    "failures": 0,
+    "passedNames": [
+      "TestProgressRetentionAndShutdown",
+      "TestDesktopSettingsRestart",
+      "TestConcurrentOperationsDuringShutdown",
+      "TestDesktopConfirmedMessageHistory"
+    ]
+  },
+  "linux-tests.jsonl": {
+    "passedTestsAndSubtests": 27,
+    "failures": 0,
+    "passedNames": [
+      "TestMetrics",
+      "TestEchoLoopback",
+      "TestConfirmedMessagesConcurrent",
+      "TestConfirmedMessageRejectsHistoryFailure",
+      "TestConfirmedMessageCanceledBeforeSend",
+      "TestUDPLossDuplicateAndLateObservations",
+      "TestBinaryAndShortWrites",
+      "TestBoundsAndTruncation",
+      "FuzzRead/seed#0",
+      "FuzzRead",
+      "TestRestoreSettingsPeersAndMeasurements",
+      "TestPersistenceAndMigrations",
+      "TestUDPRejectsAlteredEchoAndMeasuresLoss",
+      "TestUDPCancellationUnblocksRead",
+      "TestDiscovery",
+      "TestMultiClientReconnect",
+      "TestVerifiedFiles/0",
+      "TestVerifiedFiles/1",
+      "TestVerifiedFiles/65537",
+      "TestVerifiedFiles/16777216",
+      "TestVerifiedFiles",
+      "TestCorruptInterruptedAndTraversal",
+      "TestCancellationAndClose",
+      "TestLargeFileStream128MiB",
+      "TestCancelActiveUploadRemovesPartial",
+      "TestHistoryFailureRejectsFileAndCleansDestination",
+      "TestCanceledHandshakeDoesNotWaitForDeadline"
+    ]
+  },
+  "windows-tests.jsonl": {
+    "passedTestsAndSubtests": 27,
+    "failures": 0,
+    "passedNames": [
+      "TestMetrics",
+      "TestEchoLoopback",
+      "TestConfirmedMessagesConcurrent",
+      "TestConfirmedMessageRejectsHistoryFailure",
+      "TestConfirmedMessageCanceledBeforeSend",
+      "TestUDPLossDuplicateAndLateObservations",
+      "TestBinaryAndShortWrites",
+      "TestBoundsAndTruncation",
+      "FuzzRead/seed#0",
+      "FuzzRead",
+      "TestUDPRejectsAlteredEchoAndMeasuresLoss",
+      "TestUDPCancellationUnblocksRead",
+      "TestRestoreSettingsPeersAndMeasurements",
+      "TestPersistenceAndMigrations",
+      "TestDiscovery",
+      "TestMultiClientReconnect",
+      "TestVerifiedFiles/0",
+      "TestVerifiedFiles/1",
+      "TestVerifiedFiles/65537",
+      "TestVerifiedFiles/16777216",
+      "TestVerifiedFiles",
+      "TestCorruptInterruptedAndTraversal",
+      "TestCancellationAndClose",
+      "TestLargeFileStream128MiB",
+      "TestCancelActiveUploadRemovesPartial",
+      "TestHistoryFailureRejectsFileAndCleansDestination",
+      "TestCanceledHandshakeDoesNotWaitForDeadline"
+    ]
+  }
+}

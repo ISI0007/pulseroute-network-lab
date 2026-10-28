@@ -13,7 +13,7 @@ Go networking engines with a React/TypeScript/Tailwind interface and Wails deskt
 - SQLite schema/migration, settings, peer/event history and benchmark records.
 - Desktop overview, messages, transfer queue, media preview, lab, history and settings.
 
-Earlier tests passed for the core protocol, eight clients, file identity up to 16 MiB, interruption cleanup, and TCP/UDP loopback replies. Current full runtime verification is blocked by Windows Application Control. No real LAN benchmark or native UI screenshot is claimed.
+Earlier tests passed for the core protocol, eight clients, file identity up to 16 MiB, interruption cleanup, and TCP/UDP loopback replies. Current core tests now pass on Linux (with race detection) and Windows in GitHub CI, including a 128 MiB streamed integrity test and four Windows desktop backend tests. Local execution remains blocked by Smart App Control. Twenty hosted loopback runs and raw samples are retained; native GUI and two-device LAN validation remain pending. See [CI verification](docs/CI_VERIFICATION.md).
 
 ## Build
 Go 1.26+ (compiler used: 1.27.3), Node.js 24, WebView2, Windows amd64.
@@ -50,3 +50,6 @@ License is pending the owner's explicit choice. No LICENSE has been added.
 
 ## Draft academic deliverables
 [Technical report PDF](deliverables/PulseRoute-Technical-Report-DRAFT.pdf), [editable DOCX](deliverables/PulseRoute-Technical-Report-DRAFT.docx), [presentation with notes](deliverables/PulseRoute-Presentation-DRAFT.pptx), and [ten diagrams](docs/diagrams). These are progress drafts, not a completed submission. See [verification status](docs/PROGRESS.md) for the exact evidence boundary.
+
+## Recorded measurements
+[Recalculated loopback results](docs/experiments/4ef6e0c/RESULTS.md) include raw sample provenance, CSV and measured plots. These are sequential application echo results, not physical link capacity.

@@ -8,3 +8,9 @@
 *.exe
 *.test
 coverage.out
+
+# Python document/experiment tooling
+__pycache__/
+*.pyc
+/build/evidence/
+/build/experiment-data/
