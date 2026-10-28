@@ -1,7 +1,276 @@
 {
-  "scope": "Built frontend only; no Go bridge and no native desktop workflow verification",
-  "navigationScreens": 6,
-  "consoleErrors": [],
   "status": "PASS",
-  "recordedAt": "2026-10-28T03:22:21.584Z"
+  "scope": "Built production frontend in signed Chrome; no mocked Go bridge. Appearance preview tests do not verify native persistence. Representative contrast/focus checks are not a complete WCAG audit.",
+  "navigationScreens": 6,
+  "themes": 4,
+  "layoutChecks": 72,
+  "viewports": [
+    1440,
+    1000,
+    768
+  ],
+  "contrastPairs": [
+    {
+      "theme": "forest",
+      "foregroundToken": "--text",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(239, 245, 238)",
+      "background": "rgb(16, 28, 23)",
+      "contrast": 15.798
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--text",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(239, 245, 238)",
+      "background": "rgb(23, 39, 31)",
+      "contrast": 14.086
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(169, 190, 176)",
+      "background": "rgb(16, 28, 23)",
+      "contrast": 8.896
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(169, 190, 176)",
+      "background": "rgb(23, 39, 31)",
+      "contrast": 7.932
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel2",
+      "foreground": "rgb(169, 190, 176)",
+      "background": "rgb(33, 54, 43)",
+      "contrast": 6.563
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--primary-text",
+      "backgroundToken": "--primary-bg",
+      "foreground": "rgb(19, 53, 33)",
+      "background": "rgb(172, 223, 184)",
+      "contrast": 8.982
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--error-text",
+      "backgroundToken": "--error-bg",
+      "foreground": "rgb(255, 193, 167)",
+      "background": "rgb(56, 39, 33)",
+      "contrast": 9.078
+    },
+    {
+      "theme": "forest",
+      "foregroundToken": "--cyan",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(163, 221, 178)",
+      "background": "rgb(23, 39, 31)",
+      "contrast": 10.058
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--text",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(236, 242, 249)",
+      "background": "rgb(16, 23, 31)",
+      "contrast": 16.005
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--text",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(236, 242, 249)",
+      "background": "rgb(24, 35, 46)",
+      "contrast": 14.132
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(169, 185, 203)",
+      "background": "rgb(16, 23, 31)",
+      "contrast": 9.008
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(169, 185, 203)",
+      "background": "rgb(24, 35, 46)",
+      "contrast": 7.954
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel2",
+      "foreground": "rgb(169, 185, 203)",
+      "background": "rgb(35, 49, 63)",
+      "contrast": 6.628
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--primary-text",
+      "backgroundToken": "--primary-bg",
+      "foreground": "rgb(16, 47, 42)",
+      "background": "rgb(112, 223, 203)",
+      "contrast": 8.964
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--error-text",
+      "backgroundToken": "--error-bg",
+      "foreground": "rgb(255, 192, 173)",
+      "background": "rgb(60, 41, 39)",
+      "contrast": 8.706
+    },
+    {
+      "theme": "dark",
+      "foregroundToken": "--cyan",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(112, 223, 203)",
+      "background": "rgb(24, 35, 46)",
+      "contrast": 9.939
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--text",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(32, 54, 39)",
+      "background": "rgb(242, 245, 239)",
+      "contrast": 11.791
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--text",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(32, 54, 39)",
+      "background": "rgb(255, 255, 255)",
+      "contrast": 12.976
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(82, 100, 84)",
+      "background": "rgb(242, 245, 239)",
+      "contrast": 5.766
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(82, 100, 84)",
+      "background": "rgb(255, 255, 255)",
+      "contrast": 6.345
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel2",
+      "foreground": "rgb(82, 100, 84)",
+      "background": "rgb(233, 239, 230)",
+      "contrast": 5.425
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--primary-text",
+      "backgroundToken": "--primary-bg",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(23, 100, 70)",
+      "contrast": 7.124
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--error-text",
+      "backgroundToken": "--error-bg",
+      "foreground": "rgb(158, 53, 29)",
+      "background": "rgb(255, 240, 233)",
+      "contrast": 6.338
+    },
+    {
+      "theme": "light",
+      "foregroundToken": "--cyan",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(23, 100, 70)",
+      "background": "rgb(255, 255, 255)",
+      "contrast": 7.124
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--text",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(237, 245, 255)",
+      "background": "rgb(16, 28, 44)",
+      "contrast": 15.603
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--text",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(237, 245, 255)",
+      "background": "rgb(24, 42, 64)",
+      "contrast": 13.231
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--bg",
+      "foreground": "rgb(175, 194, 216)",
+      "background": "rgb(16, 28, 44)",
+      "contrast": 9.417
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(175, 194, 216)",
+      "background": "rgb(24, 42, 64)",
+      "contrast": 7.985
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--muted",
+      "backgroundToken": "--panel2",
+      "foreground": "rgb(175, 194, 216)",
+      "background": "rgb(34, 59, 84)",
+      "contrast": 6.33
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--primary-text",
+      "backgroundToken": "--primary-bg",
+      "foreground": "rgb(17, 43, 66)",
+      "background": "rgb(128, 202, 255)",
+      "contrast": 8.156
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--error-text",
+      "backgroundToken": "--error-bg",
+      "foreground": "rgb(255, 193, 172)",
+      "background": "rgb(59, 43, 49)",
+      "contrast": 8.551
+    },
+    {
+      "theme": "ocean",
+      "foregroundToken": "--cyan",
+      "backgroundToken": "--panel",
+      "foreground": "rgb(128, 202, 255)",
+      "background": "rgb(24, 42, 64)",
+      "contrast": 8.178
+    }
+  ],
+  "minimumContrast": 5.425,
+  "keyboardNavigation": "PASS",
+  "reducedMotion": "PASS",
+  "consoleErrors": [],
+  "nativeDialogAndThemePersistence": "NOT VERIFIED by this browser-only check; backend/CI evidence separate",
+  "recordedAt": "2026-10-28T09:50:01.945Z"
 }

@@ -72,6 +72,9 @@ func newApp(dir string) (*App, error) {
 		db.Close()
 		return nil, e
 	}
+	if !validTheme(theme) {
+		theme = "forest"
+	}
 	a := &App{db: db, dir: dir, progress: map[string]network.Event{}, allowed: map[string]string{}, state: Snapshot{Theme: theme, DataDir: dir, Peers: []network.Peer{}, Results: []bench.Result{}, Dropped: []string{}}}
 	a.life, a.cancel = context.WithCancel(context.Background())
 	a.state.Settings, e = db.LoadSettings()
@@ -467,7 +470,7 @@ func (a *App) SetTheme(theme string) error {
 		return err
 	}
 	defer a.wg.Done()
-	if theme != "dark" && theme != "light" {
+	if !validTheme(theme) {
 		return errors.New("invalid theme")
 	}
 	if e := a.db.Setting("theme", theme); e != nil {
@@ -570,4 +573,13 @@ func (a *App) SaveSettings(settings store.Settings) error {
 	a.state.Settings = settings
 	a.mu.Unlock()
 	return nil
+}
+
+func validTheme(theme string) bool {
+	switch theme {
+	case "dark", "light", "forest", "ocean":
+		return true
+	default:
+		return false
+	}
 }

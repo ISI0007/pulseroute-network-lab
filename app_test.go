@@ -120,3 +120,37 @@ func TestDesktopConfirmedMessageHistory(t *testing.T) {
 		t.Fatal("missing persisted server acknowledgment", snapshot.History)
 	}
 }
+
+func TestThemePalettesPersistAndRejectInvalidValues(t *testing.T) {
+	dir := t.TempDir()
+	a, err := newApp(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	snapshot, err := a.Snapshot()
+	if err != nil || snapshot.Theme != "forest" {
+		t.Fatal("fresh theme", snapshot.Theme, err)
+	}
+	for _, theme := range []string{"dark", "light", "forest", "ocean"} {
+		if err = a.SetTheme(theme); err != nil {
+			t.Fatal(theme, err)
+		}
+		snapshot, err = a.Snapshot()
+		if err != nil || snapshot.Theme != theme {
+			t.Fatal("theme not applied", theme, snapshot.Theme, err)
+		}
+	}
+	if err = a.SetTheme("unknown-palette"); err == nil {
+		t.Fatal("invalid palette accepted")
+	}
+	a.shutdown(context.Background())
+	a, err = newApp(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer a.shutdown(context.Background())
+	snapshot, err = a.Snapshot()
+	if err != nil || snapshot.Theme != "ocean" {
+		t.Fatal("theme not restored or invalid write changed it", snapshot.Theme, err)
+	}
+}

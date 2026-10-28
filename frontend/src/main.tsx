@@ -13,6 +13,7 @@ import {
   FolderOpen,
   History,
   Image as ImageIcon,
+  Info,
   MessageSquare,
   Network,
   Play,
@@ -22,7 +23,8 @@ import {
   Settings,
   ShieldCheck,
   Square,
-  Sun,
+  Palette,
+  Leaf,
   Trash2,
   X,
   Zap,
@@ -94,13 +96,15 @@ const empty: State = {
   peers: [],
   results: [],
   dropped: [],
-  theme: "dark",
+  theme: "forest",
   dataDir: "",
 };
 async function call<T = void>(method: string, ...args: unknown[]): Promise<T> {
   const bridge = window.go?.main.App;
   if (!bridge)
-    throw Error("Open PulseRoute.exe to use the desktop networking bridge.");
+    throw Error(
+      "Open PulseRoute.exe to connect peers, transfer files and run experiments.",
+    );
   return bridge[method](...args);
 }
 const bytes = (n: number) =>
@@ -112,6 +116,32 @@ const bytes = (n: number) =>
         ? (n / 1024).toFixed(1) + " KiB"
         : n + " B";
 const fileName = (p: string) => p.split(/[\\/]/).pop() || p;
+const themes = [
+  {
+    id: "forest",
+    name: "Forest",
+    detail: "Warm greens. A quieter workspace.",
+    colors: ["#10261f", "#84d6ad", "#dbe8bd"],
+  },
+  {
+    id: "dark",
+    name: "Midnight",
+    detail: "Soft charcoal with a mint accent.",
+    colors: ["#111b25", "#70dfcb", "#c4d2e7"],
+  },
+  {
+    id: "light",
+    name: "Daylight",
+    detail: "Clean paper tones and deep green.",
+    colors: ["#f3f5ef", "#176446", "#9ab5a5"],
+  },
+  {
+    id: "ocean",
+    name: "Ocean",
+    detail: "Deep blue with a clear sky accent.",
+    colors: ["#101e32", "#80caff", "#bac9ef"],
+  },
+] as const;
 const nav = [
   ["Overview", Activity],
   ["Messages", MessageSquare],
@@ -181,6 +211,10 @@ function App() {
     [tab, setTab] = useState("Overview"),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(""),
+    [notice, setNotice] = useState(""),
+    [desktopAvailable, setDesktopAvailable] = useState(
+      Boolean(window.go?.main.App),
+    ),
     [name, setName] = useState("Operator"),
     [tcp, setTcp] = useState("127.0.0.1:42191"),
     [udp, setUdp] = useState("127.0.0.1:42192"),
@@ -197,18 +231,43 @@ function App() {
     [filter, setFilter] = useState("all"),
     [speeds, setSpeeds] = useState<Record<string, number>>({});
   const hydrated = useRef(false);
+  const requestRefresh = useRef<() => void>(() => {});
+  const previewDialog = useRef<HTMLElement>(null);
+  const previewReturnFocus = useRef<HTMLElement | null>(null);
   const samples = useRef<Record<string, { at: number; bytes: number }[]>>({}),
     stop = useRef(false);
   useEffect(() => {
     let active = true,
-      loading = false;
+      loading = false,
+      delay = 1800;
+    let timer: number | undefined;
+    const schedule = () => {
+      window.clearTimeout(timer);
+      if (active && !document.hidden) timer = window.setTimeout(poll, delay);
+    };
     const poll = async () => {
-      if (loading) return;
+      if (!active || loading || document.hidden) return;
+      window.clearTimeout(timer);
+      if (!window.go?.main.App) {
+        setDesktopAvailable(false);
+        delay = 1800;
+        schedule();
+        return;
+      }
+      setDesktopAvailable(true);
       loading = true;
       try {
         const next = await call<State>("Snapshot");
         if (!active) return;
         setS(next);
+        delay =
+          next.connected ||
+          next.listening ||
+          next.progress.some((p) =>
+            ["hashing", "sending", "receiving"].includes(p.status),
+          )
+            ? 500
+            : 1800;
         if (!hydrated.current && next.settings) {
           setName(next.settings.name);
           setTcp(next.settings.tcp);
@@ -219,7 +278,7 @@ function App() {
         }
         if (next.dropped?.length)
           setQueue((q) => [...new Set([...q, ...next.dropped])].slice(0, 100));
-        document.documentElement.dataset.theme = next.theme || "dark";
+        document.documentElement.dataset.theme = next.theme || "forest";
         const rates: Record<string, number> = {};
         for (const p of next.progress) {
           const list = samples.current[p.id] || [];
@@ -240,25 +299,84 @@ function App() {
         if (active) setError(String(e));
       } finally {
         loading = false;
+        schedule();
       }
     };
-    poll();
-    const id = setInterval(poll, 500);
+    const visibility = () => {
+      window.clearTimeout(timer);
+      samples.current = {};
+      if (!document.hidden) void poll();
+    };
+    requestRefresh.current = () => {
+      if (!document.hidden) void poll();
+    };
+    document.addEventListener("visibilitychange", visibility);
+    void poll();
     return () => {
       active = false;
-      clearInterval(id);
+      window.clearTimeout(timer);
+      document.removeEventListener("visibilitychange", visibility);
+      requestRefresh.current = () => {};
     };
   }, []);
+  useEffect(() => {
+    if (!preview) return;
+    const previous = previewReturnFocus.current;
+    const dialog = previewDialog.current;
+    dialog?.querySelector<HTMLElement>("button")?.focus();
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setPreview("");
+      }
+      if (event.key !== "Tab" || !dialog) return;
+      const focusable = [
+        ...dialog.querySelectorAll<HTMLElement>(
+          'button:not(:disabled), video[controls], [tabindex="0"]',
+        ),
+      ].filter((element) => element.getClientRects().length > 0);
+      const first = focusable[0],
+        last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    document.addEventListener("keydown", keydown);
+    return () => {
+      document.removeEventListener("keydown", keydown);
+      if (previous?.isConnected) previous.focus();
+    };
+  }, [preview]);
   async function act(label: string, fn: () => Promise<unknown>) {
     setBusy(label);
     setError("");
+    setNotice("");
     try {
       await fn();
     } catch (e) {
       setError(String(e));
     } finally {
       setBusy("");
+      requestRefresh.current();
     }
+  }
+  async function changeTheme(theme: string) {
+    document.documentElement.dataset.theme = theme;
+    setS((previous) => ({ ...previous, theme }));
+    if (!window.go?.main.App) {
+      setNotice(
+        "Appearance preview only. Open the desktop application to save this theme.",
+      );
+      return;
+    }
+    await act("Saving appearance", async () => {
+      await call("SetTheme", theme);
+      setNotice("Appearance saved on this device.");
+    });
   }
   const transfers = s.history.filter((e) => e.kind === "transfer"),
     messages = s.history
@@ -294,6 +412,7 @@ function App() {
     }
   }
   async function showPreview(path: string) {
+    previewReturnFocus.current = document.activeElement as HTMLElement | null;
     await act("Preview", async () => {
       const url = await call<string>("Preview", path);
       setPreview(url);
@@ -364,7 +483,7 @@ function App() {
   );
   return (
     <div className="app">
-      <aside className="sidebar">
+      <aside className="sidebar" inert={!!preview}>
         <div className="brand">
           <div className="brand-icon">
             <Activity />
@@ -374,13 +493,14 @@ function App() {
           </div>
         </div>
         <div className="workspace-label">
-          WORKSPACE <span>01</span>
+          YOUR WORKSPACE <span>LAN</span>
         </div>
-        <nav>
+        <nav aria-label="Workspace navigation">
           {nav.map(([label, Icon]) => (
             <button
               key={label}
               className={tab === label ? "active" : ""}
+              aria-current={tab === label ? "page" : undefined}
               onClick={() => setTab(label)}
             >
               <Icon size={18} />
@@ -392,9 +512,11 @@ function App() {
           ))}
         </nav>
         <div className="sidebar-note">
-          <ShieldCheck size={21} />
-          <strong>Integrity, built in.</strong>
-          <p>Every completed file is verified with SHA-256.</p>
+          <div className="sidebar-note-icon">
+            <Leaf size={20} />
+          </div>
+          <strong>A thoughtful workspace.</strong>
+          <p>Refresh pauses in the background. You choose where files go.</p>
         </div>
         <div className="sidebar-bottom">
           <span className={s.connected ? "dot live" : "dot"} />
@@ -403,24 +525,27 @@ function App() {
             <small>{s.connected || "Trusted local networks"}</small>
           </div>
           <button
-            aria-label="Toggle theme"
-            onClick={() =>
-              act("Theme", () =>
-                call("SetTheme", s.theme === "light" ? "dark" : "light"),
-              )
-            }
+            aria-label="Appearance settings"
+            title="Appearance settings"
+            onClick={() => setTab("Settings")}
           >
-            <Sun size={17} />
+            <Palette size={18} />
           </button>
         </div>
       </aside>
-      <main>
+      <main inert={!!preview}>
         <header>
           <div className="breadcrumb">
             WORKSPACE <ChevronRight size={12} /> {tab.toUpperCase()}
           </div>
           <div className="header-right">
-            <span className="tag">v0.1 / DEVELOPMENT</span>
+            <span
+              className="refresh-label"
+              title="Refresh pauses when the window is hidden and slows when idle"
+            >
+              <Leaf size={13} /> Adaptive refresh
+            </span>
+            <span className="tag">DEVELOPMENT PREVIEW</span>
             <span className="avatar">{name.slice(0, 2).toUpperCase()}</span>
           </div>
         </header>
@@ -455,6 +580,26 @@ function App() {
               <FlaskConical size={16} /> Open experiment
             </button>
           </div>
+          {!desktopAvailable && (
+            <div className="notice desktop-preview" role="status">
+              <span>
+                <Info size={17} />
+                Desktop preview: open PulseRoute.exe to connect peers, transfer
+                files and run experiments.
+              </span>
+            </div>
+          )}
+          {notice && (
+            <div className="notice" role="status">
+              <span>
+                <CheckCircle2 size={16} />
+                {notice}
+              </span>
+              <button aria-label="Dismiss notice" onClick={() => setNotice("")}>
+                <X size={16} />
+              </button>
+            </div>
+          )}
           {(error || s.error) && (
             <div className="error" role="alert">
               <span>{error || s.error}</span>
@@ -471,6 +616,27 @@ function App() {
           )}
           {tab === "Overview" && (
             <>
+              <div className="workspace-summary">
+                <div>
+                  <span className="summary-symbol">
+                    <Leaf size={22} />
+                  </span>
+                  <div>
+                    <strong>One workspace. Every connection.</strong>
+                    <p>
+                      Start a receiver, connect a peer, then share and measure.
+                    </p>
+                  </div>
+                </div>
+                <span
+                  className={
+                    "connection-pill " + (s.connected ? "connected" : "")
+                  }
+                >
+                  <span className={s.connected ? "dot live" : "dot"} />
+                  {s.connected ? "Session connected" : "Ready when you are"}
+                </span>
+              </div>
               <div className="stats">
                 <Stat
                   icon={<Network />}
@@ -534,7 +700,12 @@ function App() {
                   </div>
                   <div className="topology-footer">
                     <span>
-                      <span className="dot live" /> Direct or client-server
+                      <span
+                        className={
+                          s.connected || s.listening ? "dot live" : "dot"
+                        }
+                      />{" "}
+                      Direct or client-server
                     </span>
                     <span>LAN scope / no NAT traversal</span>
                   </div>
@@ -739,11 +910,16 @@ function App() {
                       <strong>{fileName(p)}</strong>
                       <small>{p}</small>
                     </div>
-                    <button title="Preview" onClick={() => showPreview(p)}>
+                    <button
+                      title="Preview"
+                      aria-label={"Preview " + fileName(p)}
+                      onClick={() => showPreview(p)}
+                    >
                       <ImageIcon size={17} />
                     </button>
                     <button
                       title="Remove from queue"
+                      aria-label={"Remove " + fileName(p) + " from queue"}
                       disabled={running}
                       onClick={() => setQueue((q) => q.filter((x) => x !== p))}
                     >
@@ -784,7 +960,11 @@ function App() {
                     <strong>{p.name}</strong>
                     <span className="tag">{p.status}</span>
                   </div>
-                  <progress value={p.bytes} max={p.total || 1} />
+                  <progress
+                    aria-label={"Transfer progress for " + p.name}
+                    value={p.bytes}
+                    max={p.total || 1}
+                  />
                   <div>
                     <small>
                       {bytes(p.bytes)} / {bytes(p.total)}
@@ -929,38 +1109,45 @@ function App() {
                     Export raw JSON <ArrowUpRight size={15} />
                   </button>
                 </div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Transport</th>
-                      <th>Endpoint</th>
-                      <th>Received</th>
-                      <th>Loss</th>
-                      <th>Mean RTT</th>
-                      <th>Echo goodput</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {s.results.map((r, i) => (
-                      <tr key={i}>
-                        <td>
-                          <span className="tag">
-                            {r.protocol.toUpperCase()}
-                          </span>
-                        </td>
-                        <td>
-                          <code>{r.address}</code>
-                        </td>
-                        <td>
-                          {r.received}/{r.sent}
-                        </td>
-                        <td>{r.lossPercent.toFixed(1)}%</td>
-                        <td>{r.rttMs.toFixed(3)} ms</td>
-                        <td>{r.mbps.toFixed(3)} Mbps</td>
+                <div
+                  className="table-scroll"
+                  role="region"
+                  aria-label="Recorded experiment results"
+                  tabIndex={0}
+                >
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Transport</th>
+                        <th>Endpoint</th>
+                        <th>Received</th>
+                        <th>Loss</th>
+                        <th>Mean RTT</th>
+                        <th>Echo goodput</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {s.results.map((r, i) => (
+                        <tr key={i}>
+                          <td>
+                            <span className="tag">
+                              {r.protocol.toUpperCase()}
+                            </span>
+                          </td>
+                          <td>
+                            <code>{r.address}</code>
+                          </td>
+                          <td>
+                            {r.received}/{r.sent}
+                          </td>
+                          <td>{r.lossPercent.toFixed(1)}%</td>
+                          <td>{r.rttMs.toFixed(3)} ms</td>
+                          <td>{r.mbps.toFixed(3)} Mbps</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
                 {!s.results.length && (
                   <Empty
                     icon={<FlaskConical />}
@@ -1072,6 +1259,56 @@ function App() {
           )}
           {tab === "Settings" && (
             <section className="panel settings">
+              <div className="appearance-heading">
+                <span className="summary-symbol">
+                  <Palette size={22} />
+                </span>
+                <div>
+                  <h2>Make this workspace yours</h2>
+                  <p>Four considered palettes. One familiar workspace.</p>
+                </div>
+              </div>
+              <div
+                className="theme-grid"
+                role="group"
+                aria-label="Appearance themes"
+              >
+                {themes.map((theme) => (
+                  <button
+                    key={theme.id}
+                    className={
+                      "theme-option " + (s.theme === theme.id ? "selected" : "")
+                    }
+                    aria-label={"Use " + theme.name + " theme"}
+                    aria-pressed={s.theme === theme.id}
+                    disabled={!!busy}
+                    onClick={() => void changeTheme(theme.id)}
+                  >
+                    <span
+                      className="theme-swatch"
+                      style={{ background: theme.colors[0] }}
+                    >
+                      <span style={{ background: theme.colors[1] }} />
+                      <span style={{ background: theme.colors[2] }} />
+                      <span style={{ background: theme.colors[1] }} />
+                    </span>
+                    <span className="theme-name">
+                      {theme.name}
+                      {s.theme === theme.id && <CheckCircle2 size={15} />}
+                    </span>
+                    <small>{theme.detail}</small>
+                  </button>
+                ))}
+              </div>
+              <div className="resource-note">
+                <Leaf size={16} />
+                <span>
+                  Live when you need it. Refresh slows while idle and pauses
+                  when this window is hidden. Motion follows your system
+                  preference.
+                </span>
+              </div>
+              <hr />
               <h2>Node configuration</h2>
               <p>
                 Use 127.0.0.1 for same-machine experiments. Use 0.0.0.0 to
@@ -1138,17 +1375,7 @@ function App() {
                 peer name, known peers and recent experiments are stored in
                 SQLite.
               </p>
-              <button
-                className="secondary"
-                onClick={() =>
-                  act("Theme", () =>
-                    call("SetTheme", s.theme === "light" ? "dark" : "light"),
-                  )
-                }
-              >
-                <Sun size={16} /> Switch to{" "}
-                {s.theme === "light" ? "dark" : "light"} theme
-              </button>
+
               <hr />
               <h2>Laboratory boundaries</h2>
               <p>
@@ -1162,7 +1389,7 @@ function App() {
             <span>
               <Activity size={13} /> PULSEROUTE NETWORK LABORATORY
             </span>
-            <span>Real sockets. Recorded evidence.</span>
+            <span>Local first. Measured honestly.</span>
           </footer>
         </div>
       </main>
@@ -1173,7 +1400,7 @@ function App() {
           aria-modal="true"
           aria-label="File preview"
         >
-          <section>
+          <section ref={previewDialog} tabIndex={-1}>
             <div className="panel-heading">
               <h2>{previewName}</h2>
               <button aria-label="Close preview" onClick={() => setPreview("")}>
