@@ -340,13 +340,23 @@ func (a *App) disconnect() {
 	}
 }
 func (a *App) SendMessage(text string) (string, error) {
+	if err := a.beginOperation(); err != nil {
+		return "", err
+	}
+	defer a.wg.Done()
 	a.mu.Lock()
 	c := a.client
 	a.mu.Unlock()
 	if c == nil {
 		return "", errors.New("connect before sending")
 	}
-	return c.Send(text)
+	ctx, cancel := context.WithTimeout(a.life, 10*time.Second)
+	defer cancel()
+	ack, err := c.SendConfirmed(ctx, text)
+	if err != nil {
+		return ack.ID, err
+	}
+	return ack.ID, a.record(network.Event{Kind: "delivery", ID: ack.ID, Status: "accepted", Count: ack.Count})
 }
 func (a *App) ChooseFiles() ([]string, error) {
 	paths, e := wr.OpenMultipleFilesDialog(a.ctx, wr.OpenDialogOptions{Title: "Queue files for transfer"})

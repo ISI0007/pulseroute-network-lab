@@ -87,3 +87,36 @@ func TestConcurrentOperationsDuringShutdown(t *testing.T) {
 		t.Fatal("database reopened after shutdown")
 	}
 }
+
+func TestDesktopConfirmedMessageHistory(t *testing.T) {
+	a, err := newApp(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer a.shutdown(context.Background())
+	server, err := network.Start("127.0.0.1:0", t.TempDir(), a.record)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer server.Close()
+	if err = a.Connect(server.Addr(), "operator"); err != nil {
+		t.Fatal(err)
+	}
+	id, err := a.SendMessage("persist confirmed status")
+	if err != nil {
+		t.Fatal(err)
+	}
+	snapshot, err := a.Snapshot()
+	if err != nil {
+		t.Fatal(err)
+	}
+	found := false
+	for _, e := range snapshot.History {
+		if e.Kind == "delivery" && e.ID == id && e.Status == "accepted" && e.Count == 1 {
+			found = true
+		}
+	}
+	if !found {
+		t.Fatal("missing persisted server acknowledgment", snapshot.History)
+	}
+}

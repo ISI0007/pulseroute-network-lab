@@ -17,6 +17,7 @@ const MaxFile = int64(8 * 1024 * 1024 * 1024)
 
 type Event struct {
 	Kind   string    `json:"kind"`
+	Count  int       `json:"count"`
 	ID     string    `json:"id"`
 	Peer   string    `json:"peer"`
 	Text   string    `json:"text"`
@@ -213,10 +214,12 @@ func (s *Server) chat(c net.Conn, h wire.Header) {
 }
 
 type Client struct {
-	p      *session
-	Events chan wire.Header
-	done   chan struct{}
-	once   sync.Once
+	p         *session
+	Events    chan wire.Header
+	done      chan struct{}
+	once      sync.Once
+	pendingMu sync.Mutex
+	pending   map[string]chan wire.Header
 }
 
 func Connect(ctx context.Context, addr, name string) (*Client, error) {
@@ -240,7 +243,7 @@ func Connect(ctx context.Context, addr, name string) (*Client, error) {
 		return nil, e
 	}
 	c.SetDeadline(time.Time{})
-	cl := &Client{p: &session{conn: c, name: name}, Events: make(chan wire.Header, 256), done: make(chan struct{})}
+	cl := &Client{p: &session{conn: c, name: name}, Events: make(chan wire.Header, 256), done: make(chan struct{}), pending: make(map[string]chan wire.Header)}
 	go cl.read()
 	go cl.heartbeat()
 	return cl, nil
@@ -253,6 +256,17 @@ func (c *Client) read() {
 		h, e := wire.Receive(c.p.conn)
 		if e != nil {
 			return
+		}
+		if h.Op == "ack" || h.Op == "error" {
+			c.pendingMu.Lock()
+			waiter := c.pending[h.ID]
+			if waiter != nil {
+				select {
+				case waiter <- h:
+				default:
+				}
+			}
+			c.pendingMu.Unlock()
 		}
 		select {
 		case c.Events <- h:

@@ -30,6 +30,7 @@ import {
 import "./style.css";
 type Event = {
   kind: string;
+  count: number;
   id: string;
   peer: string;
   text: string;
@@ -264,6 +265,11 @@ function App() {
       .filter((e) => e.kind === "message")
       .filter((e, i, a) => a.findIndex((x) => x.id === e.id) === i)
       .reverse(),
+    deliveries = new Map(
+      s.history
+        .filter((e) => e.kind === "delivery")
+        .map((e) => [e.id, e.count]),
+    ),
     verified = transfers.filter(
       (e) => e.status === "verified" || e.status === "sent-verified",
     ),
@@ -641,6 +647,12 @@ function App() {
                             <small>{new Date(m.at).toLocaleTimeString()}</small>
                           </strong>
                           <p>{m.text}</p>
+                          {deliveries.has(m.id) && (
+                            <small className="delivery-confirmation">
+                              <CheckCircle2 size={12} /> Server accepted; wrote
+                              to {deliveries.get(m.id)} connected sessions
+                            </small>
+                          )}
                         </div>
                       </div>
                     ))

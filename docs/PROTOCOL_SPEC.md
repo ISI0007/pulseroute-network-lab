@@ -3,7 +3,7 @@
 Four-byte unsigned big-endian length N, then one-byte type and N−1 payload bytes. Require 1 ≤ N ≤ 131072 before allocation. Types: 1 JSON control, 2 binary chunk, 3 end. JSON controls carry version=1 and an operation. Unknown versions are rejected.
 
 ## Chat
-Client sends hello(peer), server sends welcome. Client sends message(id,text), server validates ID length and text ≤8192 bytes and records acceptance. It writes the message to currently connected sessions, then ack(id,count). Count means successful socket writes, not durable receipt or human reading. Slow recipients have a five-second write deadline and are disconnected. Heartbeats every 20 seconds keep the 90-second read deadline active. Offline replay and duplicate suppression are not implemented; manual retries can duplicate text.
+Client sends hello(peer), server sends welcome. Client sends message(id,text), server validates ID length and text ≤8192 bytes and records acceptance. It writes the message to currently connected sessions, then ack(id,count). Count means successful socket writes, not durable receipt or human reading. Slow recipients have a five-second write deadline and are disconnected. Heartbeats every 20 seconds keep the 90-second read deadline active. The desktop Send action waits up to ten seconds for a matching acknowledgment and persists its socket-write count. At most 128 confirmations may be pending per client. Rejection is propagated to the sender. A lost acknowledgment leaves the delivery outcome unknown: no automatic resend is attempted. Offline replay and duplicate suppression are not implemented; manual retries can duplicate text.
 
 ## File upload
 put(id,name,size,sha256) → ready → chunk* → end → complete(id,size,sha256).

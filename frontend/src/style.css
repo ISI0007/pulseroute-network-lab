@@ -964,3 +964,12 @@ footer {
 .sidebar-note p {
   font-size: 12px;
 }
+
+.delivery-confirmation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cyan);
+  margin-top: 8px;
+  font-size: 11px;
+}
