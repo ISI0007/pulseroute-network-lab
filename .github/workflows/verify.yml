@@ -126,3 +126,25 @@ jobs:
         with:
           name: pulseroute-windows
           path: build/portable/*
+
+  native-smoke:
+    needs: windows
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pulseroute-windows
+          path: build/native-bin
+      - name: Native Wails window and real bridge smoke test
+        shell: pwsh
+        run: ./scripts/native-smoke.ps1 -Executable build/native-bin/PulseRoute.exe -EvidenceDirectory build/native-evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-ui-verification
+          path: |
+            build/native-evidence/native-ui-result.json
+            build/native-evidence/native-stdout.txt
+            build/native-evidence/native-stderr.txt
