@@ -14,3 +14,5 @@ The sender hashes in a preliminary streaming pass. The receiver enforces the dec
 
 ## Experiments
 ping/pong provides a one-shot TCP RTT. echo provides bounded binary request/response probes. UDP sequence protocol and formulas are documented alongside the actual implementation when verified.
+
+UDP echo payloads contain PLS1 magic, a big-endian uint32 sequence, an eight-byte random per-run cookie and padding. Replies must match the size, magic, cookie and padding. Unrelated or altered UDP replies are ignored until the probe deadline; altered TCP replies fail the experiment. The cookie isolates experiments and does not authenticate a peer.

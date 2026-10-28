@@ -2,7 +2,9 @@
 package bench
 
 import (
+	"bytes"
 	"context"
+	"crypto/rand"
 	"encoding/binary"
 	"errors"
 	"github.com/ISI0007/pulseroute-network-lab/internal/wire"
@@ -92,6 +94,10 @@ func Run(ctx context.Context, protocol, addr string, count, size int) (Result, e
 	}
 	payload := make([]byte, size)
 	copy(payload, []byte("PLS1"))
+	// A per-run cookie rejects replies from older or unrelated experiments.
+	if _, e = rand.Read(payload[8:16]); e != nil {
+		return Result{}, e
+	}
 	buf := make([]byte, 2048)
 	samples := make([]Sample, 0, count)
 	start := time.Now()
@@ -139,7 +145,10 @@ func Run(ctx context.Context, protocol, addr string, count, size int) (Result, e
 				}
 				break
 			}
-			if len(b) != size || string(b[:4]) != "PLS1" {
+			if len(b) != size || string(b[:4]) != "PLS1" || !bytes.Equal(b[8:], payload[8:]) {
+				if protocol == "tcp" {
+					return Result{}, errors.New("echo payload mismatch")
+				}
 				continue
 			}
 			seq := int(binary.BigEndian.Uint32(b[4:8]))
