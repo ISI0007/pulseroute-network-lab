@@ -35,5 +35,15 @@
     "publicAssetHTTP": 200,
     "archiveContents": "8 expected files; ZIP integrity and checksum verified",
     "authorization": "Owner explicitly approved unsigned preview publication"
+  },
+  "application": {
+    "status": "Submitted (owner-confirmed website acknowledgement)",
+    "date": "2026-10-28",
+    "confirmationSource": "Owner reported a thank-you/confirmation message; final acknowledgement was not independently captured by automation",
+    "providerReview": "Pending",
+    "sponsorshipApproved": false,
+    "certificateIssued": false,
+    "marketingConsent": false,
+    "contactDetailsStoredInRepository": false
   }
 }

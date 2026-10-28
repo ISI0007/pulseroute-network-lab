@@ -1,6 +1,6 @@
 # Free code-signing sponsorship application draft
 
-**Not submitted. No sponsorship approval or signed release exists.** Prepared 28 October 2026 for owner review.
+**Submitted: owner reported the website thank-you/confirmation message on 28 October 2026. Sponsorship approval and signed releases remain pending.** The automated browser did not capture the final acknowledgement. Contact details are not stored in this repository.
 
 Application page: https://signpath.org/apply
 Terms: https://signpath.org/terms
@@ -30,15 +30,18 @@ Contact email and account MFA confirmation: owner supplies privately in the prov
 - DONE: signing policy, privacy/removal instructions and upstream notice inventory (41 installed components in the initial inventory; CI regenerates for the actual build toolchain).
 - PENDING: signing-provider account activation and its MFA; GitHub account security details are reviewed privately with the owner.
 - DONE: owner-approved unsigned development preview with public download, notices, policy link, source commit and checksum.
-- PENDING: provider review of project maturity/reputation, eligibility and application.
+- SUBMITTED: application sent using the owner-authorized contact details; owner reported the website acknowledgement. Provider review of maturity/reputation and eligibility remains pending.
 - PENDING: provider-approved artifact configuration and signing integration after acceptance.
 - PENDING: native protected-machine and two-device LAN verification.
 
 ## Important expectations
-MIT approval is not signing approval. A new project can be rejected or asked to build a verifiable track record. Free sponsorship does not promise a Zehri Developers certificate identity: SignPath Foundation would be the certificate publisher. No publisher enrollment, provider contractual acceptance or signing request has been performed. Only the explicitly approved unsigned preview release has been published.
+MIT approval is not signing approval. A new project can be rejected or asked to build a verifiable track record. Free sponsorship does not promise a Zehri Developers certificate identity: SignPath Foundation would be the certificate publisher. The owner authorized submission of the application. Required application code-of-conduct and processing consents were accepted; optional marketing was left unchecked. No sponsorship acceptance, certificate issuance or signing request is claimed. The published preview remains unsigned.
 
 ## Form completion
-The public application page embeds an external provider form. The project answers above are a reviewable draft, not a completed account registration. The preview is published and project answers are prepared. Submit only after provider-account prerequisites are resolved and the owner approves the exact application. Enter contact/personal information directly into the official form and keep it out of repository files.
+The official external form was completed and Submit was clicked once. Automation initially saw a submitting state; the owner subsequently reported a thank-you/confirmation message. Treat this as owner-confirmed submission, not an independently captured receipt or provider acceptance. Any email verification/account activation must be completed through the provider's official flow. Do not resubmit a duplicate unless the provider requests it.
 
 ## Latest preparation verification
 Workflow 40629168030 at source 2a85693 succeeded, including Windows product metadata checks, regeneration of notices from the actual build toolchain, unsigned-package rejection and portable artifact assembly. Both jobs passed. Archive SHA-256 and both executable hashes were independently checked before preparing the release draft. No binary was executed locally.
+
+## Review status
+Awaiting the provider's reply. The application honestly disclosed that the project is new and has no established broad adoption or third-party endorsements. No certificate, account approval, signing key or trusted signed executable is available yet.

@@ -26,4 +26,7 @@ Smart App Control VerifiedAndReputableDesktop blocks local Go test/CLI launches 
 Workflow runs on main source changes and pull requests, skips documentation-only pushes, and retains raw logs/loopback results. Avoid pushing repeated source changes while checking a run because newer runs cancel older ones. Preserve history; never force-push.
 
 ## Approved preview publication
-Owner approved publishing unsigned prerelease v0.1.0-preview.1, source 2a85693. Public release and ZIP/checksum are verified. See the updated sponsorship draft for application answers. No provider application or signing request was submitted; contact/account information must be entered privately through the official provider form.
+Owner approved publishing unsigned prerelease v0.1.0-preview.1, source 2a85693. Public release and ZIP/checksum are verified. See the updated sponsorship draft for application answers. The owner later authorized application submission and reported the website thank-you acknowledgement. Provider review and any account activation remain pending; no signing request or certificate exists. Contact details remain outside the repository.
+
+## Sponsorship submission update
+Owner confirmed the application website displayed a thank-you message after the authorized form submission. The automated session had ended without capturing that final acknowledgement, so confirmation is explicitly owner-reported. Await the provider reply; do not duplicate the application or claim acceptance/signing. The owner must complete any official email verification privately.
