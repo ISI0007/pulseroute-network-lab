@@ -1,0 +1,29 @@
+{
+  "status": "PASS: preparation checks only",
+  "sourceCommit": "2a85693a9e0514ffc971bfef5c452c1e1119c44c",
+  "workflowRun": 40629168030,
+  "workflowUrl": "https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40629168030",
+  "checks": [
+    "Linux race/core tests",
+    "Windows core/backend tests",
+    "Production builds",
+    "Consistent Windows product/version metadata",
+    "Upstream notice generation for actual build toolchain",
+    "Unsigned distribution rejection",
+    "Portable artifact contents and executable hashes independently checked"
+  ],
+  "executables": [
+    {
+      "file": "pulseroute-cli.exe",
+      "sha256": "C76F27DE849BE815FD24CBAC1A6FCF72587FDEA8C9236F5ACD3200DACC608512",
+      "signatureStatus": "NotSigned"
+    },
+    {
+      "file": "PulseRoute.exe",
+      "sha256": "9EB75786CF7D666CD726835CA2D320A734F756B0239D553DEE83CBA0F92F215C",
+      "signatureStatus": "NotSigned"
+    }
+  ],
+  "signing": "PENDING sponsorship acceptance; no sponsored signature",
+  "release": "Unpublished draft; publication requires owner approval"
+}
