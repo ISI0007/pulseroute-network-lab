@@ -13,6 +13,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"runtime"
 	"time"
 )
 
@@ -122,7 +123,7 @@ func main() {
 				time.Sleep(20 * time.Millisecond)
 			}
 		}
-		enc.Encode(map[string]any{"environment": "Windows amd64; loopback; sequential echo; no impairment", "recordedAt": time.Now().UTC(), "runs": results})
+		enc.Encode(map[string]any{"environment": map[string]string{"os": runtime.GOOS, "arch": runtime.GOARCH, "go": runtime.Version(), "network": "loopback", "method": "sequential application echo", "impairment": "none injected"}, "recordedAt": time.Now().UTC(), "runs": results})
 	default:
 		log.Fatal("unknown mode")
 	}

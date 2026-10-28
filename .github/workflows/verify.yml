@@ -1,19 +1,42 @@
 name: Verify PulseRoute
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   core:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
-      - run: go test -race ./... -count=1
+      - name: Core race tests
+        shell: bash
+        run: |
+          mkdir -p build/evidence
+          set -o pipefail
+          go test -json -race ./... -count=1 | tee build/evidence/linux-tests.jsonl
       - run: go vet ./...
+      - name: Record loopback experiments
+        shell: bash
+        run: |
+          go run ./cmd/pulseroute -mode selftest -data build/experiment-data -count 100 -bytes 1024 > build/evidence/linux-loopback.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linux-verification
+          path: build/evidence/*
   windows:
     runs-on: windows-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -22,14 +45,34 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: go test ./... -count=1
+      - name: Core tests
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force build/evidence | Out-Null
+          go test -json ./... -count=1 | Tee-Object build/evidence/windows-tests.jsonl
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - run: npm ci
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
+      - name: Desktop backend tests
+        shell: pwsh
+        run: |
+          go test -json -tags desktop . -count=1 | Tee-Object build/evidence/desktop-tests.jsonl
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - run: go vet -tags desktop .
       - run: go build -tags desktop,production -ldflags "-H windowsgui" -o build/bin/PulseRoute.exe .
       - run: go build -o build/bin/pulseroute-cli.exe ./cmd/pulseroute
+      - name: Record loopback experiments
+        shell: pwsh
+        run: |
+          ./build/bin/pulseroute-cli.exe -mode selftest -data build/experiment-data -count 100 -bytes 1024 > build/evidence/windows-loopback.json
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-verification
+          path: build/evidence/*
       - uses: actions/upload-artifact@v4
         with:
           name: pulseroute-windows
