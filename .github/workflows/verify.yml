@@ -148,3 +148,5 @@ jobs:
             build/native-evidence/native-ui-result.json
             build/native-evidence/native-stdout.txt
             build/native-evidence/native-stderr.txt
+            build/native-evidence/native-accessibility-tree.json
+            build/native-evidence/native-settings.png
