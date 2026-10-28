@@ -53,3 +53,6 @@ License is pending the owner's explicit choice. No LICENSE has been added.
 
 ## Recorded measurements
 [Recalculated loopback results](docs/experiments/4ef6e0c/RESULTS.md) include raw sample provenance, CSV and measured plots. These are sequential application echo results, not physical link capacity.
+
+## Signed distribution
+[Signing and portable packaging](docs/DISTRIBUTION.md) is prepared. Trusted signing is pending an eligible verified publisher identity; existing build artifacts remain unsigned. Zehri Developers is the product brand, not yet a verified certificate publisher.

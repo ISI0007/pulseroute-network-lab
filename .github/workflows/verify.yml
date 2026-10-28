@@ -64,6 +64,17 @@ jobs:
       - run: go vet -tags desktop .
       - run: go build -tags desktop,production -ldflags "-H windowsgui" -o build/bin/PulseRoute.exe .
       - run: go build -o build/bin/pulseroute-cli.exe ./cmd/pulseroute
+      - name: Reject unsigned distribution packages
+        shell: pwsh
+        run: |
+          try {
+            ./scripts/package-signed.ps1 -SourceCommit $env:GITHUB_SHA -VerifyOnly
+            throw 'Unsigned distribution unexpectedly succeeded'
+          } catch {
+            if ($_.Exception.Message -notlike '*requires a valid timestamped Authenticode signature*') { throw }
+            if (Test-Path build/distribution) { throw 'Unsigned distribution directory was created' }
+            Write-Output 'PASS: unsigned binaries rejected; no distribution ZIP created'
+          }
       - name: Record loopback experiments
         shell: pwsh
         run: |

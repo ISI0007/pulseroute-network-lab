@@ -1,0 +1,15 @@
+{
+  "status": "BLOCKED",
+  "reason": "No approved code-signing identity available",
+  "codeSigningCertificatesFound": 0,
+  "signToolFound": false,
+  "checks": {
+    "powershellParser": "PASS",
+    "unsignedInputRejected": "PASS; no distribution ZIP created",
+    "actualSigning": "BLOCKED; no certificate/provider",
+    "positiveSignatureVerification": "NOT VERIFIED"
+  },
+  "securityChanges": "None",
+  "spending": "None",
+  "releasePublished": false
+}
