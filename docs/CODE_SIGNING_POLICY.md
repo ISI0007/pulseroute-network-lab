@@ -3,7 +3,7 @@
 Status: sponsorship preparation only. PulseRoute has not been accepted by SignPath Foundation and no sponsored signature or endorsement is claimed.
 
 ## Ownership and responsibilities
-The public source repository is ISI0007/pulseroute-network-lab. Zehri Developers is the product brand. ISI0007 is the repository maintainer, reviewer and proposed release-signing approver. Repository access is the authority for code changes; a CI pass does not authorize signing or publishing a release. Each release requires the owner's manual approval. Multi-factor authentication for GitHub and any signing account must be confirmed before enrollment; its current state has not been verified.
+The public source repository is ISI0007/pulseroute-network-lab. Zehri Developers is the product brand. ISI0007 is the repository maintainer, reviewer and proposed release-signing approver. Repository access is the authority for code changes; a CI pass does not authorize signing or publishing a release. Each release requires the owner's manual approval. Multi-factor authentication for GitHub and any signing account must be confirmed before enrollment; account-security configuration is reviewed privately with the owner and is not published in repository files.
 
 ## What may be signed
 Only PulseRoute binaries built from a reviewed commit in this repository, with matching product name/version metadata and passing CI evidence. Do not sign unrelated software, substitute local binaries for CI outputs or attach signatures to modified artifacts. Third-party dependencies retain their licenses and notices. Keys stay with the approved signing service/provider and must never enter source control.

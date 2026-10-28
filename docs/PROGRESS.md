@@ -39,3 +39,5 @@ PowerShell npm.ps1 authorization and sandbox TEMP failures were resolved by the 
 
 ## Free signing preparation
 The owner approved MIT. Both Windows executables now carry consistent product/version metadata, verified in successful run 40628906942 (e6d1f83). Signing policy, privacy/removal guidance, dependency notice inventory and an unsubmitted application draft are present. Private keys, personal enrollment facts and contact details are not published. A provider application and an official release still require owner review/approval.
+
+The owner-approved unsigned development preview v0.1.0-preview.1 is published. Its public ZIP and checksum were checked, with eight expected portable files and a verified source manifest. This does not change trusted-signing status; provider acceptance/application remain pending.

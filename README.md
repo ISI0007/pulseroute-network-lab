@@ -59,3 +59,6 @@ Licensed under [MIT](LICENSE), approved by the owner on 28 October 2026. Depende
 
 ## Code signing policy
 [Code signing policy](docs/CODE_SIGNING_POLICY.md) - [Privacy and removal](docs/PRIVACY.md) - [Sponsorship application draft](docs/SPONSORSHIP_APPLICATION_DRAFT.md). Free sponsorship is being explored; approval and signed releases are pending.
+
+## Development preview download
+[Windows x64 portable preview 0.1.0-preview.1](https://github.com/ISI0007/pulseroute-network-lab/releases/tag/v0.1.0-preview.1) is **unsigned**, with source commit, SHA-256 checksum, MIT license and dependency notices. It may be blocked by Smart App Control. Sponsorship and a trusted signed release remain pending.

@@ -24,3 +24,6 @@ Smart App Control VerifiedAndReputableDesktop blocks local Go test/CLI launches 
 6. Continue free signing preparation using SPONSORSHIP_APPLICATION_DRAFT.md. Windows product/version metadata passed CI run 40628906942; license notices and privacy/signing policies are prepared. Do not claim sponsorship or publish a release until approved.
 
 Workflow runs on main source changes and pull requests, skips documentation-only pushes, and retains raw logs/loopback results. Avoid pushing repeated source changes while checking a run because newer runs cancel older ones. Preserve history; never force-push.
+
+## Approved preview publication
+Owner approved publishing unsigned prerelease v0.1.0-preview.1, source 2a85693. Public release and ZIP/checksum are verified. See the updated sponsorship draft for application answers. No provider application or signing request was submitted; contact/account information must be entered privately through the official provider form.

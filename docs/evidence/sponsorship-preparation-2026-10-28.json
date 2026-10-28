@@ -25,5 +25,15 @@
     }
   ],
   "signing": "PENDING sponsorship acceptance; no sponsored signature",
-  "release": "Unpublished draft; publication requires owner approval"
+  "release": {
+    "published": true,
+    "prerelease": true,
+    "unsigned": true,
+    "url": "https://github.com/ISI0007/pulseroute-network-lab/releases/tag/v0.1.0-preview.1",
+    "sourceCommit": "2a85693a9e0514ffc971bfef5c452c1e1119c44c",
+    "archiveSHA256": "95a8f81ee0f5a0190fc4ab4fc22bfa69a6caa841a8b88e019920cf247193fefe",
+    "publicAssetHTTP": 200,
+    "archiveContents": "8 expected files; ZIP integrity and checksum verified",
+    "authorization": "Owner explicitly approved unsigned preview publication"
+  }
 }

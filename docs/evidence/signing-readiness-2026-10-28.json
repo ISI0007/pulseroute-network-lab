@@ -11,5 +11,8 @@
   },
   "securityChanges": "None",
   "spending": "None",
-  "releasePublished": false
+  "releasePublished": true,
+  "releaseStatus": "Owner-approved unsigned development prerelease; no trusted signature",
+  "MITLicenseApproved": true,
+  "sponsorshipApplication": "Draft prepared; not submitted"
 }
