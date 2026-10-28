@@ -88,6 +88,9 @@ try {
         if($reply.op -ne 'pong' -or $reply.id -ne '00112233445566778899aabbccddeeff'){throw 'Native listener returned wrong ping response'}
     } finally {$client.Dispose()}
     $checks.Add('UI receiver action started real TCP listener; v1 ping/pong passed')
+    Invoke-Button 'Use Ocean theme'
+    Start-Sleep -Milliseconds 600
+    $checks.Add('Ocean palette selected through native UI')
     Invoke-Button 'Save node settings'
     Start-Sleep -Milliseconds 500
     $checks.Add('Save node settings invoked through native UI')
@@ -102,7 +105,9 @@ try {
     if($LASTEXITCODE){throw 'Native settings persistence query failed'}
     $saved=$settings | ConvertFrom-Json
     if($saved.tcp -ne '127.0.0.1:42191'){throw 'Native saved settings did not match UI values'}
-    $checks.Add('Native UI settings persisted in SQLite; graceful window shutdown')
+    $savedTheme = python -c "import sqlite3,sys; c=sqlite3.connect(sys.argv[1]); print(c.execute('SELECT value FROM settings WHERE key=?',('theme',)).fetchone()[0]); c.close()" $database
+    if($LASTEXITCODE -or $savedTheme -ne 'ocean'){throw 'Native theme selection did not persist in SQLite'}
+    $checks.Add('Native UI settings and Ocean palette persisted in SQLite; graceful window shutdown')
     $status='PASS'
 } catch {
     $reason=$_.Exception.Message
