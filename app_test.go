@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/ISI0007/pulseroute-network-lab/internal/network"
 	"github.com/ISI0007/pulseroute-network-lab/internal/store"
+	"sync"
 	"testing"
 	"time"
 )
@@ -57,5 +58,32 @@ func TestDesktopSettingsRestart(t *testing.T) {
 	snapshot, err := a.Snapshot()
 	if err != nil || snapshot.Settings.Name != "saved-name" {
 		t.Fatal(snapshot.Settings, err)
+	}
+}
+
+func TestConcurrentOperationsDuringShutdown(t *testing.T) {
+	a, err := newApp(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	var workers sync.WaitGroup
+	start := make(chan struct{})
+	for i := 0; i < 8; i++ {
+		workers.Add(1)
+		go func() {
+			defer workers.Done()
+			<-start
+			for j := 0; j < 20; j++ {
+				_, _ = a.Snapshot()
+				_ = a.SaveSettings(store.DefaultSettings())
+				_ = a.SetTheme("dark")
+			}
+		}()
+	}
+	close(start)
+	a.shutdown(context.Background())
+	workers.Wait()
+	if _, err = a.Snapshot(); err == nil {
+		t.Fatal("database reopened after shutdown")
 	}
 }
