@@ -46,7 +46,7 @@ Trusted local networks only; no encryption or peer authentication. Video files a
 Versioned SQLite schema: internal/store/migrations/001_initial.sql.
 Repository access was restored on 28 October 2026 and the full checkpoint was pushed. The verification workflow runs on pushes; consult GitHub Actions for its actual result.
 
-License is pending the owner's explicit choice. No LICENSE has been added.
+Licensed under [MIT](LICENSE), approved by the owner on 28 October 2026. Dependency licenses remain with their respective owners.
 
 ## Draft academic deliverables
 [Technical report PDF](deliverables/PulseRoute-Technical-Report-DRAFT.pdf), [editable DOCX](deliverables/PulseRoute-Technical-Report-DRAFT.docx), [presentation with notes](deliverables/PulseRoute-Presentation-DRAFT.pptx), and [ten diagrams](docs/diagrams). These are progress drafts, not a completed submission. See [verification status](docs/PROGRESS.md) for the exact evidence boundary.

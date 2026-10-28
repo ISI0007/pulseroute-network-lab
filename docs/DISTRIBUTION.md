@@ -31,7 +31,7 @@ Zehri Developers is the product brand; the certificate publisher must be the ide
 
 Two routes require the owner's decision before enrollment:
 - Individual commercial certificate: Certum Standard Code Signing and SSL.com IV describe individual validation. The individual certificate normally displays the validated person's name. Confirm the applicant's eligibility, accepted identification/address documents, total certificate/cloud-signing fees and refund terms directly with the provider before paying. Submit identity documents only through the provider's official verification channel.
-- Open-source sponsorship: SignPath Foundation is a possible application route if the owner chooses an OSI-approved license and meets its other project/reputation/release conditions. Approval is not automatic, and the certificate publisher is SignPath Foundation. PulseRoute currently has no owner-selected license. No license change or application was submitted.
+- Open-source sponsorship: SignPath Foundation is a possible application route if the owner chooses an OSI-approved license and meets its other project/reputation/release conditions. Approval is not automatic, and the certificate publisher is SignPath Foundation. The owner approved MIT on 28 October 2026 and LICENSE is present. No sponsorship application has been submitted.
 
 Microsoft Artifact Signing Public Trust has geographic and publisher eligibility restrictions. Check its current eligibility list before enrolling. A Private Trust profile is not a substitute for public distribution.
 

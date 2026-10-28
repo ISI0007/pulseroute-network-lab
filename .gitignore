@@ -16,3 +16,6 @@ __pycache__/
 /build/experiment-data/
 
 /build/distribution/
+
+# Generated Windows resources
+*.syso

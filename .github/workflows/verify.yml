@@ -62,8 +62,19 @@ jobs:
           go test -json -tags desktop . -count=1 | Tee-Object build/evidence/desktop-tests.jsonl
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - run: go vet -tags desktop .
+      - name: Generate consistent Windows product metadata
+        run: ./scripts/windows-resources.ps1
       - run: go build -tags desktop,production -ldflags "-H windowsgui" -o build/bin/PulseRoute.exe .
       - run: go build -o build/bin/pulseroute-cli.exe ./cmd/pulseroute
+      - name: Verify Windows product metadata
+        shell: pwsh
+        run: |
+          $metadata = foreach ($name in @('PulseRoute.exe','pulseroute-cli.exe')) {
+            $info = (Get-Item "build/bin/$name").VersionInfo
+            if ($info.ProductName -ne 'PulseRoute' -or $info.ProductVersion -ne '0.1.0.0' -or $info.FileVersion -ne '0.1.0.0') { throw "Incorrect product metadata in $name" }
+            [ordered]@{file=$name;product=$info.ProductName;version=$info.ProductVersion;fileVersion=$info.FileVersion;brand=$info.CompanyName}
+          }
+          $metadata | ConvertTo-Json | Set-Content -Encoding UTF8 build/evidence/windows-product-metadata.json
       - name: Reject unsigned distribution packages
         shell: pwsh
         run: |
