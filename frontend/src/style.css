@@ -905,11 +905,24 @@ footer span {
 .modal {
   position: fixed;
   inset: 0;
-  background: #000b;
-  z-index: 5;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  display: none;
+  padding: 35px;
+  overflow: auto;
+}
+.modal[open] {
   display: grid;
   place-items: center;
-  padding: 35px;
+}
+.modal::backdrop {
+  background: #000b;
 }
 .modal > section {
   padding: 22px;

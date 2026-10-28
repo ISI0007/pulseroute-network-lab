@@ -33,8 +33,13 @@ function Wait-Button([string]$name) {
 }
 function Invoke-Button([string]$name) {
     $button=Wait-Button $name
-    $pattern=$button.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern)
-    $pattern.Invoke()
+    $pattern=$null
+    if($button.TryGetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern,[ref]$pattern)) {
+        ([System.Windows.Automation.InvokePattern]$pattern).Invoke()
+    } elseif($button.TryGetCurrentPattern([System.Windows.Automation.TogglePattern]::Pattern,[ref]$pattern)) {
+        # aria-pressed theme cards expose Toggle rather than Invoke on Windows.
+        ([System.Windows.Automation.TogglePattern]$pattern).Toggle()
+    } else { throw "Native button has no supported action pattern: $name" }
 }
 function Read-Exactly($stream,[int]$count) {
     $bytes=[byte[]]::new($count);$offset=0

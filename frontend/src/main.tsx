@@ -232,7 +232,7 @@ function App() {
     [speeds, setSpeeds] = useState<Record<string, number>>({});
   const hydrated = useRef(false);
   const requestRefresh = useRef<() => void>(() => {});
-  const previewDialog = useRef<HTMLElement>(null);
+  const previewDialog = useRef<HTMLDialogElement>(null);
   const previewReturnFocus = useRef<HTMLElement | null>(null);
   const samples = useRef<Record<string, { at: number; bytes: number }[]>>({}),
     stop = useRef(false);
@@ -323,31 +323,10 @@ function App() {
     if (!preview) return;
     const previous = previewReturnFocus.current;
     const dialog = previewDialog.current;
+    if (dialog && !dialog.open) dialog.showModal();
     dialog?.querySelector<HTMLElement>("button")?.focus();
-    const keydown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        setPreview("");
-      }
-      if (event.key !== "Tab" || !dialog) return;
-      const focusable = [
-        ...dialog.querySelectorAll<HTMLElement>(
-          'button:not(:disabled), video[controls], [tabindex="0"]',
-        ),
-      ].filter((element) => element.getClientRects().length > 0);
-      const first = focusable[0],
-        last = focusable.at(-1);
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last?.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first?.focus();
-      }
-    };
-    document.addEventListener("keydown", keydown);
     return () => {
-      document.removeEventListener("keydown", keydown);
+      if (dialog?.open) dialog.close();
       if (previous?.isConnected) previous.focus();
     };
   }, [preview]);
@@ -1394,13 +1373,16 @@ function App() {
         </div>
       </main>
       {preview && (
-        <div
+        <dialog
+          ref={previewDialog}
           className="modal"
-          role="dialog"
-          aria-modal="true"
           aria-label="File preview"
+          onCancel={(event) => {
+            event.preventDefault();
+            setPreview("");
+          }}
         >
-          <section ref={previewDialog} tabIndex={-1}>
+          <section>
             <div className="panel-heading">
               <h2>{previewName}</h2>
               <button aria-label="Close preview" onClick={() => setPreview("")}>
@@ -1413,7 +1395,7 @@ function App() {
               <img src={preview} alt={previewName} />
             )}
           </section>
-        </div>
+        </dialog>
       )}
     </div>
   );
