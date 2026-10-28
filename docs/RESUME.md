@@ -16,7 +16,7 @@ Draft report DOCX/PDF, 16-slide PPTX with notes, ten diagrams and frontend scree
 ## Confirmed blocker
 CodeIntegrity event 3077 records 14737 (CLI) and 14722 (store test) identify Smart App Control policy VerifiedAndReputableDesktop, GUID {0283ac0f-fff1-49ae-ada1-8a933130cad6}. See WINDOWS_APPLICATION_CONTROL.md and selected JSON evidence. Do not repeat blocked executions without a meaningful policy/signing change. Never disable controls, add bypasses, or infer that conversational permission changes Windows policy. SAC has no individual-app exception; trusted signing or an approved independent development/CI environment is required.
 
-GitHub connector could not access ISI0007/pulseroute-network-lab despite the user's report that access was granted. No remote push succeeded. Recheck only when access changes; preserve the remote README and use a codex/ branch, never force-push. License choice remains unanswered.
+GitHub access was restored on 28 October 2026. All saved commits were pushed to main and codex/pulseroute-foundation, preserving the initial remote README history through merge commit 989efd4. Verify GitHub Actions results before claiming runtime tests pass. License choice remains unanswered.
 
 ## Verification boundary
 PASS: final vet checks, internal/desktop test compilation, production builds, frontend six-screen smoke test, Python SQLite schema test, document validation and native slide rendering.
@@ -26,7 +26,7 @@ Frontend screenshots have a bridge-unavailable banner and are not native screens
 
 ## Next work
 1. Obtain an approved runtime/signing or CI route and run current Go tests, then fix failures.
-2. Restore GitHub connector access, reconcile remote README and push the checkpoint.
+2. Inspect GitHub Actions runs and fix any actual runtime/test failures.
 3. Exercise settings restart, cancellation/shutdown, reconnect, queue, discovery, previews and two-device transfers.
 4. Implement missing hub file relay/download and recovery according to the original specification.
 5. Capture reproducible raw benchmarks and native screenshots; revise drafts into a final submission.

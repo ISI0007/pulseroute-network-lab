@@ -44,7 +44,7 @@ Trusted local networks only; no encryption or peer authentication. Video files a
 ## Project map
 `internal/wire`, `internal/network`, `internal/bench`, `internal/store`; `cmd/pulseroute`; `app.go` and `main.go` (desktop build tag); `frontend`; `docs`; `scripts`.
 Versioned SQLite schema: internal/store/migrations/001_initial.sql.
-CI workflow is prepared but has not run because repository access is unavailable.
+Repository access was restored on 28 October 2026 and the full checkpoint was pushed. The verification workflow runs on pushes; consult GitHub Actions for its actual result.
 
 License is pending the owner's explicit choice. No LICENSE has been added.
 

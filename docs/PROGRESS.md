@@ -21,7 +21,7 @@ Updated 28 October 2026 after the user's request to continue. Active project: D:
 | Presentation | PASS: artifact checks | Draft, 16 slides, speaker notes, native PowerPoint rendering |
 | Diagrams | PASS: generation | Ten diagrams, each Mermaid/SVG/PNG; diagrams describe current boundaries |
 | Windows policy attribution | PASS | Selected CodeIntegrity records identify VerifiedAndReputableDesktop/SAC |
-| GitHub push | BLOCKED | Connector cannot see repository; no remote commit claimed |
+| GitHub push | PASS | Access restored 28 October; full history pushed to main and codex/pulseroute-foundation; initial remote commit preserved |
 | License | NOT IMPLEMENTED | Owner's choice pending |
 
 ## Changes in this checkpoint
@@ -34,3 +34,6 @@ An invocation of npm resolved to npm.ps1 and failed PowerShell authorization; th
 
 ## Remaining scope
 Current runtime/race/LAN validation, hub-mediated file relay/download, stronger recovery, measured benchmark data and final academic submission remain unfinished. No security control was disabled or bypassed.
+
+## GitHub synchronization
+Access restored on 28 October 2026. Implementation and academic checkpoint commits were uploaded in merge commit 989efd4, preserving initial remote commit 33c7e0e. GitHub Actions results must be read separately; successful upload is not a test pass.
