@@ -9,8 +9,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/ISI0007/pulseroute-network-lab/internal/bench"
+	"github.com/ISI0007/pulseroute-network-lab/internal/nearby"
 	"github.com/ISI0007/pulseroute-network-lab/internal/network"
 	"github.com/ISI0007/pulseroute-network-lab/internal/store"
+	"github.com/ISI0007/pulseroute-network-lab/internal/wire"
 	wr "github.com/wailsapp/wails/v2/pkg/runtime"
 	"io"
 	"mime"
@@ -25,38 +27,44 @@ import (
 )
 
 type Snapshot struct {
-	Settings  store.Settings  `json:"settings"`
-	Listening string          `json:"listening"`
-	UDP       string          `json:"udp"`
-	Connected string          `json:"connected"`
-	Error     string          `json:"error"`
-	History   []network.Event `json:"history"`
-	Progress  []network.Event `json:"progress"`
-	Peers     []network.Peer  `json:"peers"`
-	Results   []bench.Result  `json:"results"`
-	Dropped   []string        `json:"dropped"`
-	Theme     string          `json:"theme"`
-	DataDir   string          `json:"dataDir"`
+	SelfID      string          `json:"selfId"`
+	CallPeers   []wire.Peer     `json:"callPeers"`
+	CallSignals []CallEnvelope  `json:"callSignals"`
+	Settings    store.Settings  `json:"settings"`
+	Listening   string          `json:"listening"`
+	UDP         string          `json:"udp"`
+	Connected   string          `json:"connected"`
+	Error       string          `json:"error"`
+	History     []network.Event `json:"history"`
+	Progress    []network.Event `json:"progress"`
+	Peers       []network.Peer  `json:"peers"`
+	Results     []bench.Result  `json:"results"`
+	Dropped     []string        `json:"dropped"`
+	Theme       string          `json:"theme"`
+	DataDir     string          `json:"dataDir"`
 }
 type App struct {
-	life      context.Context
-	cancel    context.CancelFunc
-	closing   bool
-	ctx       context.Context
-	mu        sync.Mutex
-	ops       sync.Mutex
-	wg        sync.WaitGroup
-	db        *store.Store
-	dir       string
-	server    *network.Server
-	echo      *bench.Echo
-	discovery *network.Discovery
-	client    *network.Client
-	reconnect context.CancelFunc
-	transfer  context.CancelFunc
-	state     Snapshot
-	progress  map[string]network.Event
-	allowed   map[string]string
+	callSeq      uint64
+	callRevision uint64
+	nearbyServer *nearby.Server
+	life         context.Context
+	cancel       context.CancelFunc
+	closing      bool
+	ctx          context.Context
+	mu           sync.Mutex
+	ops          sync.Mutex
+	wg           sync.WaitGroup
+	db           *store.Store
+	dir          string
+	server       *network.Server
+	echo         *bench.Echo
+	discovery    *network.Discovery
+	client       *network.Client
+	reconnect    context.CancelFunc
+	transfer     context.CancelFunc
+	state        Snapshot
+	progress     map[string]network.Event
+	allowed      map[string]string
 }
 
 func newApp(dir string) (*App, error) {
@@ -116,6 +124,7 @@ func (a *App) shutdown(ctx context.Context) {
 	a.Disconnect()
 	a.CancelTransfer()
 	a.StopHost()
+	a.StopNearby()
 	a.wg.Wait()
 	a.db.Close()
 }
@@ -137,7 +146,7 @@ func (a *App) record(e network.Event) error {
 			oldest := ""
 			var at time.Time
 			for id, v := range a.progress {
-				terminal := v.Status == "verified" || v.Status == "sent-verified" || v.Status == "failed" || v.Status == "cancelled"
+				terminal := v.Status == "verified" || v.Status == "sent-verified" || v.Status == "failed" || v.Status == "cancelled" || v.Status == "received"
 				if terminal && (oldest == "" || v.At.Before(at)) {
 					oldest, at = id, v.At
 				}
@@ -178,6 +187,8 @@ func (a *App) Snapshot() (Snapshot, error) {
 		s.Progress = append(s.Progress, v)
 	}
 	s.Peers = append([]network.Peer{}, a.state.Peers...)
+	s.CallPeers = append([]wire.Peer{}, a.state.CallPeers...)
+	s.CallSignals = append([]CallEnvelope{}, a.state.CallSignals...)
 	s.Results = append([]bench.Result{}, a.state.Results...)
 	s.Dropped = append([]string{}, a.state.Dropped...)
 	a.state.Dropped = nil
@@ -264,6 +275,10 @@ func (a *App) Connect(addr, name string) error {
 	a.client = c
 	a.reconnect = cancel
 	a.state.Connected = addr
+	a.state.SelfID = c.ID
+	a.state.CallPeers = []wire.Peer{}
+	a.state.CallSignals = []CallEnvelope{}
+	a.callRevision = 0
 	a.mu.Unlock()
 	a.wg.Add(1)
 	go func() {
@@ -272,11 +287,26 @@ func (a *App) Connect(addr, name string) error {
 		delay := 500 * time.Millisecond
 		for {
 			for h := range current.Events {
+				if ctx.Err() != nil {
+					return
+				}
+				if h.Op == "peers" {
+					a.mu.Lock()
+					if a.client == current && ctx.Err() == nil && h.Revision >= a.callRevision {
+						a.state.CallPeers = append([]wire.Peer{}, h.Peers...)
+						a.callRevision = h.Revision
+					}
+					a.mu.Unlock()
+				}
+				if h.Op == "signal" {
+					a.pushCallFrom(current, CallEnvelope{From: h.From, Peer: h.Peer, ID: h.ID, Text: h.Text})
+				}
 				if h.Op == "message" {
 					a.record(network.Event{Kind: "message", ID: h.ID, Peer: h.Peer, Text: h.Text, Status: "received"})
 				}
 				if h.Op == "error" {
 					a.setError(errors.New(h.Error))
+					a.pushCallFrom(current, CallEnvelope{ID: h.ID, Error: h.Error})
 				}
 			}
 			if ctx.Err() != nil {
@@ -286,8 +316,12 @@ func (a *App) Connect(addr, name string) error {
 			if a.client == current {
 				a.client = nil
 				a.state.Connected = ""
+				a.state.SelfID = ""
+				a.state.CallPeers = []wire.Peer{}
+				a.callRevision = 0
 			}
 			a.mu.Unlock()
+			a.pushCall(CallEnvelope{Error: "Signaling connection closed. Call ended."})
 			for {
 				select {
 				case <-ctx.Done():
@@ -314,6 +348,10 @@ func (a *App) Connect(addr, name string) error {
 				}
 				a.client = next
 				a.state.Connected = addr
+				a.state.SelfID = next.ID
+				a.state.CallPeers = []wire.Peer{}
+				a.state.CallSignals = []CallEnvelope{}
+				a.callRevision = 0
 				a.mu.Unlock()
 				current = next
 				delay = 500 * time.Millisecond
@@ -337,9 +375,16 @@ func (a *App) disconnect() {
 	a.reconnect = nil
 	a.client = nil
 	a.state.Connected = ""
+	a.state.SelfID = ""
+	a.state.CallPeers = []wire.Peer{}
+	a.state.CallSignals = []CallEnvelope{}
+	a.callRevision = 0
 	a.mu.Unlock()
 	if c != nil {
 		c.Close()
+	}
+	if c != nil || cancel != nil {
+		a.pushCall(CallEnvelope{Error: "Signaling connection closed. Call ended."})
 	}
 }
 func (a *App) SendMessage(text string) (string, error) {
@@ -509,7 +554,7 @@ func (a *App) Preview(path string) (string, error) {
 			return "", e
 		}
 		for _, v := range history {
-			if v.Path == path && v.Status == "verified" {
+			if v.Path == path && (v.Status == "verified" || v.Status == "received") {
 				allowed = true
 				break
 			}

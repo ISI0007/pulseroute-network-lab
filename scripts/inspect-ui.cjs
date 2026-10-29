@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const pages = ['Overview', 'Messages', 'Transfers', 'Network Lab', 'History', 'Settings'];
+const pages = ['Overview', 'Messages', 'Calls', 'Nearby', 'Transfers', 'Network Lab', 'History', 'Settings'];
 const themes = [['forest', 'Forest'], ['dark', 'Midnight'], ['light', 'Daylight'], ['ocean', 'Ocean']];
 const rgb = value => value.match(/[\d.]+/g).slice(0, 3).map(Number);
 const luminance = value => rgb(value).map(n => { const c = n / 255; return c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4; }).reduce((sum, c, i) => sum + c * [.2126, .7152, .0722][i], 0);
@@ -96,9 +96,9 @@ const contrast = (a, b) => { const x = luminance(a), y = luminance(b); return (M
     await page.keyboard.press('Enter');
     await page.getByRole('heading', { name: 'Messages', exact: true, level: 1 }).waitFor();
     assert.equal(errors.length, 0, errors.join('; '));
-    const result = { status: 'PASS', scope: 'Built production frontend in signed Chrome; no mocked Go bridge. Appearance preview tests do not verify native persistence. Representative contrast/focus checks are not a complete WCAG audit.', navigationScreens: 6, themes: 4, layoutChecks: layouts.length, viewports: [1440, 1000, 768], contrastPairs: ratios, minimumContrast: Math.min(...ratios.map(r => r.contrast)), keyboardNavigation: 'PASS', reducedMotion: 'PASS', consoleErrors: errors, nativeDialogAndThemePersistence: 'NOT VERIFIED by this browser-only check; backend/CI evidence separate', recordedAt: new Date().toISOString() };
+    const result = { status: 'PASS', scope: 'Built production frontend in signed Chrome; no mocked Go bridge. Appearance preview tests do not verify native persistence. Representative contrast/focus checks are not a complete WCAG audit.', navigationScreens: 8, themes: 4, layoutChecks: layouts.length, viewports: [1440, 1000, 768], contrastPairs: ratios, minimumContrast: Math.min(...ratios.map(r => r.contrast)), keyboardNavigation: 'PASS', reducedMotion: 'PASS', consoleErrors: errors, nativeDialogAndThemePersistence: 'NOT VERIFIED by this browser-only check; backend/CI evidence separate', recordedAt: new Date().toISOString() };
     fs.writeFileSync(path.join(out, 'ui-checks.json'), JSON.stringify(result, null, 2));
-    console.log(`PASS: 6 screens / 4 palettes / ${layouts.length} layouts / ${ratios.length} contrast pairs / keyboard and reduced motion; no fake backend data.`);
+    console.log(`PASS: 8 screens / 4 palettes / ${layouts.length} layouts / ${ratios.length} contrast pairs / keyboard and reduced motion; no fake backend data.`);
   } finally {
     if (browser) await browser.close();
     server.close();

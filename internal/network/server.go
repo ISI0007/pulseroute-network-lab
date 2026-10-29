@@ -31,9 +31,12 @@ type Event struct {
 }
 type Sink func(Event) error
 type session struct {
-	conn net.Conn
-	mu   sync.Mutex
-	name string
+	conn         net.Conn
+	mu           sync.Mutex
+	name         string
+	id           string
+	signalWindow time.Time
+	signalCount  int
 }
 
 func (s *session) send(h wire.Header) error {
@@ -44,15 +47,17 @@ func (s *session) send(h wire.Header) error {
 }
 
 type Server struct {
-	ln      net.Listener
-	dir     string
-	sink    Sink
-	mu      sync.Mutex
-	clients map[*session]bool
-	conns   map[net.Conn]bool
-	closed  bool
-	wg      sync.WaitGroup
-	slots   chan struct{}
+	ln             net.Listener
+	dir            string
+	sink           Sink
+	mu             sync.Mutex
+	clients        map[*session]bool
+	conns          map[net.Conn]bool
+	closed         bool
+	wg             sync.WaitGroup
+	slots          chan struct{}
+	rosterMu       sync.Mutex
+	rosterRevision uint64
 }
 
 func ID() string {
@@ -164,14 +169,33 @@ func (s *Server) chat(c net.Conn, h wire.Header) {
 		wire.Send(c, wire.Header{Op: "error", Error: "peer name must be 1..64 bytes"})
 		return
 	}
-	p := &session{conn: c, name: h.Peer}
+	p := &session{conn: c, name: h.Peer, id: ID()}
+	// Hold the session write lock during registration and welcome, so concurrent
+	// chat/roster traffic can never arrive ahead of the handshake response.
+	p.mu.Lock()
 	s.mu.Lock()
-	s.clients[p] = true
-	s.mu.Unlock()
-	defer func() { s.mu.Lock(); delete(s.clients, p); s.mu.Unlock() }()
-	if p.send(wire.Header{Op: "welcome", Peer: p.name}) != nil {
+	if s.closed {
+		s.mu.Unlock()
+		p.mu.Unlock()
 		return
 	}
+	s.clients[p] = true
+	s.rosterRevision++
+	s.mu.Unlock()
+	defer func() {
+		s.mu.Lock()
+		delete(s.clients, p)
+		s.rosterRevision++
+		s.mu.Unlock()
+		s.broadcastRoster()
+	}()
+	c.SetWriteDeadline(time.Now().Add(5 * time.Second))
+	err := wire.Send(c, wire.Header{Op: "welcome", ID: p.id, Peer: p.name})
+	p.mu.Unlock()
+	if err != nil {
+		return
+	}
+	s.broadcastRoster()
 	for {
 		c.SetReadDeadline(time.Now().Add(90 * time.Second))
 		h, e := wire.Receive(c)
@@ -181,6 +205,14 @@ func (s *Server) chat(c net.Conn, h wire.Header) {
 		if h.Op == "ping" {
 			if p.send(wire.Header{Op: "pong", ID: h.ID}) != nil {
 				return
+			}
+			continue
+		}
+		if h.Op == "signal" {
+			if err := s.routeSignal(p, h); err != nil {
+				if p.send(wire.Header{Op: "error", ID: h.ID, Error: err.Error()}) != nil {
+					return
+				}
 			}
 			continue
 		}
@@ -214,6 +246,7 @@ func (s *Server) chat(c net.Conn, h wire.Header) {
 }
 
 type Client struct {
+	ID        string
 	p         *session
 	Events    chan wire.Header
 	done      chan struct{}
@@ -242,8 +275,12 @@ func Connect(ctx context.Context, addr, name string) (*Client, error) {
 		}
 		return nil, e
 	}
+	if h.ID != "" && !validIdentifier(h.ID) {
+		c.Close()
+		return nil, errors.New("invalid server session ID")
+	}
 	c.SetDeadline(time.Time{})
-	cl := &Client{p: &session{conn: c, name: name}, Events: make(chan wire.Header, 256), done: make(chan struct{}), pending: make(map[string]chan wire.Header)}
+	cl := &Client{ID: h.ID, p: &session{conn: c, name: name}, Events: make(chan wire.Header, 256), done: make(chan struct{}), pending: make(map[string]chan wire.Header)}
 	go cl.read()
 	go cl.heartbeat()
 	return cl, nil

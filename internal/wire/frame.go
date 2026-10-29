@@ -16,17 +16,26 @@ const (
 	End     byte = 3
 )
 
+type Peer struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
+}
+
 type Header struct {
-	Version int    `json:"version"`
-	Op      string `json:"op"`
-	ID      string `json:"id,omitempty"`
-	Peer    string `json:"peer,omitempty"`
-	Text    string `json:"text,omitempty"`
-	Name    string `json:"name,omitempty"`
-	Size    int64  `json:"size,omitempty"`
-	SHA256  string `json:"sha256,omitempty"`
-	Error   string `json:"error,omitempty"`
-	Count   int    `json:"count,omitempty"`
+	Version  int    `json:"version"`
+	Op       string `json:"op"`
+	ID       string `json:"id,omitempty"`
+	Peer     string `json:"peer,omitempty"`
+	Text     string `json:"text,omitempty"`
+	Name     string `json:"name,omitempty"`
+	Size     int64  `json:"size,omitempty"`
+	SHA256   string `json:"sha256,omitempty"`
+	Error    string `json:"error,omitempty"`
+	Count    int    `json:"count,omitempty"`
+	From     string `json:"from,omitempty"`
+	To       string `json:"to,omitempty"`
+	Peers    []Peer `json:"peers,omitempty"`
+	Revision uint64 `json:"revision,omitempty"`
 }
 
 func Write(w io.Writer, k byte, b []byte) error {

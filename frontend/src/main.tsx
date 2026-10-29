@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   Activity,
+  Phone,
+  QrCode,
   ArrowDownLeft,
   ArrowUpRight,
   CheckCircle2,
@@ -30,6 +32,9 @@ import {
   Zap,
 } from "lucide-react";
 import "./style.css";
+import CallsPanel from "./CallsPanel";
+import NearbyPanel from "./NearbyPanel";
+import { CallState, emptyCallState } from "./rtc";
 type Event = {
   kind: string;
   count: number;
@@ -66,6 +71,16 @@ type NodeSettings = {
   discovery: string;
 };
 type State = {
+  selfId: string;
+  callPeers: { id: string; name: string }[];
+  callSignals: {
+    seq: number;
+    from: string;
+    peer: string;
+    id: string;
+    text: string;
+    error?: string;
+  }[];
   settings?: NodeSettings;
   listening: string;
   udp: string;
@@ -87,6 +102,9 @@ declare global {
   }
 }
 const empty: State = {
+  selfId: "",
+  callPeers: [],
+  callSignals: [],
   listening: "",
   udp: "",
   connected: "",
@@ -145,6 +163,8 @@ const themes = [
 const nav = [
   ["Overview", Activity],
   ["Messages", MessageSquare],
+  ["Calls", Phone],
+  ["Nearby", QrCode],
   ["Transfers", ArrowUpRight],
   ["Network Lab", FlaskConical],
   ["History", History],
@@ -207,6 +227,7 @@ function Chart({
   );
 }
 function App() {
+  const [liveCall, setLiveCall] = useState<CallState>({ ...emptyCallState });
   const [s, setS] = useState<State>(empty),
     [tab, setTab] = useState("Overview"),
     [error, setError] = useState(""),
@@ -543,6 +564,10 @@ function App() {
                       Overview:
                         "Connect peers, move files, and see what happens on the wire.",
                       Messages: "Real TCP sessions. Clear delivery semantics.",
+                      Calls:
+                        "Live voice and video between connected PulseRoute users.",
+                      Nearby:
+                        "Scan, connect and share across your trusted Wi-Fi.",
                       Transfers:
                         "Stream binary files with end-to-end integrity verification.",
                       "Network Lab":
@@ -771,6 +796,41 @@ function App() {
                 </section>
               </div>
             </>
+          )}
+          {liveCall.phase === "incoming" && tab !== "Calls" && (
+            <div className="notice incoming-call" role="alert">
+              <strong>
+                Incoming {liveCall.mode === "video" ? "video" : "voice"} call
+                from {liveCall.peerName}
+              </strong>
+              <button className="primary" onClick={() => setTab("Calls")}>
+                View incoming call
+              </button>
+            </div>
+          )}
+          <div hidden={tab !== "Calls"}>
+            {tab === "Calls" && connectPanel}
+            <CallsPanel
+              connected={s.connected}
+              selfId={s.selfId || ""}
+              peers={s.callPeers || []}
+              signals={s.callSignals || []}
+              onError={setError}
+              onCallState={setLiveCall}
+              onCallEnded={(summary) => {
+                void call(
+                  "RecordCallSummary",
+                  summary.id,
+                  summary.peer,
+                  summary.mode,
+                  summary.status,
+                  summary.durationSeconds,
+                ).catch((error) => setError(String(error)));
+              }}
+            />
+          </div>
+          {tab === "Nearby" && (
+            <NearbyPanel available={desktopAvailable} onError={setError} />
           )}
           {tab === "Messages" && (
             <>
@@ -1195,6 +1255,7 @@ function App() {
                 >
                   <option value="all">All events</option>
                   <option value="message">Messages</option>
+                  <option value="call">Calls</option>
                   <option value="transfer">Transfers</option>
                 </select>
               </div>
@@ -1359,8 +1420,8 @@ function App() {
               <h2>Laboratory boundaries</h2>
               <p>
                 Trusted LAN only. No encryption or authenticated peer identity.
-                No internet NAT traversal, live video calling, or custom TCP
-                congestion-control implementation.
+                No internet NAT traversal or custom TCP congestion-control
+                implementation.
               </p>
             </section>
           )}
