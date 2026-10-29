@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "reason": "",
+  "launch": "Visible native window on isolated CI runner only",
+  "scope": "Actual Windows Wails/WebView2 window and UIA actions; loopback sockets; not two-device or complete dialog/drag-drop verification",
+  "checks": [
+    "Native PulseRoute.exe window created with real WebView2",
+    "Native navigation invoked: Overview",
+    "Native navigation invoked: Messages",
+    "Native navigation invoked: Calls",
+    "Native navigation invoked: Nearby",
+    "Native navigation invoked: Transfers",
+    "Native navigation invoked: Network Lab",
+    "Native navigation invoked: History",
+    "Native navigation invoked: Settings",
+    "UI receiver action started real TCP listener; v1 ping/pong passed",
+    "Ocean palette selected through native UI",
+    "Save node settings invoked through native UI",
+    "Receiver stopped through native UI",
+    "Native UI settings and Ocean palette persisted in SQLite; graceful window shutdown"
+  ],
+  "recordedAtUTC": "2026-10-29T13:29:48.1178549Z"
+}

@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "f2a5261",
+  "workflowRun": 40882087286,
+  "url": "https://github.com/ISI0007/pulseroute-network-lab/actions/runs/40882087286",
+  "status": "PASS",
+  "jobs": [
+    "core",
+    "windows",
+    "native-smoke"
+  ],
+  "linuxCoreTests": 46,
+  "desktopTests": 8,
+  "mediaTestScope": "Real browser WebRTC with synthetic audio/video and fixture signaling; not physical capture or native signaling integration",
+  "physicalDeviceTests": "NOT RUN",
+  "trustedSigning": "PENDING",
+  "localGoExecution": "BLOCKED by Windows policy; not retried"
+}
