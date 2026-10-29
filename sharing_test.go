@@ -43,7 +43,7 @@ func TestNearbyPickerAuthorizationAndRevocation(t *testing.T) {
 		t.Fatal(err)
 	}
 	client := &http.Client{Timeout: 2 * time.Second}
-	endpoint := "http://" + link.Host + "/api/files"
+	endpoint := "http://" + link.Host + "/api/session"
 	response, err := client.Get(endpoint)
 	if err != nil {
 		t.Fatal(err)
