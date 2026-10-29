@@ -8,7 +8,7 @@ The exact source commit and executable hashes are in build-manifest.json. Produc
 ## Requirements and use
 Windows x64 and the official Microsoft Edge WebView2 runtime are required. Extract the complete ZIP into a writable folder. If host policy permits, open PulseRoute.exe. Do not run directly inside the ZIP. Refer to DISTRIBUTION.md for LAN endpoints, private-network firewall approval and remaining validation boundaries.
 
-Core networking, persistence and Windows backend/build tests have passed in CI. Native WebView2 interaction and two-computer LAN behavior have not yet been verified. No final demonstration readiness, physical link capacity or 8 GiB reliability is claimed.
+Core networking, persistence and Windows backend/build tests have passed in CI. Native WebView2 navigation, receiver actions and settings persistence passed hosted Windows CI. Two-computer LAN behavior, real camera/microphone calls and physical Bluetooth transfers have not yet been verified. No final demonstration readiness, physical link capacity or 8 GiB reliability is claimed.
 
 ## Removal
 Close the app. Back up any received files and history you want. Review/delete the extracted folder and its local data when no longer needed. A custom PULSEROUTE_DATA location is separate. The shared WebView2 runtime is not removed. See PRIVACY.md for storage and network behavior.
