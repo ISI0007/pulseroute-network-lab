@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "scope": "Built production frontend in signed Chrome; no mocked Go bridge. Appearance preview tests do not verify native persistence. Representative contrast/focus checks are not a complete WCAG audit.",
-  "navigationScreens": 6,
+  "navigationScreens": 8,
   "themes": 4,
-  "layoutChecks": 72,
+  "layoutChecks": 96,
   "viewports": [
     1440,
     1000,
@@ -272,5 +272,5 @@
   "reducedMotion": "PASS",
   "consoleErrors": [],
   "nativeDialogAndThemePersistence": "NOT VERIFIED by this browser-only check; backend/CI evidence separate",
-  "recordedAt": "2026-10-28T10:07:01.397Z"
+  "recordedAt": "2026-10-29T13:24:37.852Z"
 }

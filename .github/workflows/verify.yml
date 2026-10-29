@@ -56,6 +56,10 @@ jobs:
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
+      - name: WebRTC lifecycle with synthetic media
+        run: node scripts/check-rtc.cjs
+      - name: QR round-trip
+        run: node scripts/check-qr.cjs
       - name: Desktop backend tests
         shell: pwsh
         run: |
