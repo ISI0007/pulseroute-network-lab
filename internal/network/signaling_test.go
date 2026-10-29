@@ -114,8 +114,8 @@ func TestDirectedSignalIdentityAndRoster(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	noSignalBeforeMessage(t, c, barrier)
-	noSignalBeforeMessage(t, a, barrier)
+	noSignalBeforeMessage(t, c, barrier.ID)
+	noSignalBeforeMessage(t, a, barrier.ID)
 	historyMu.Lock()
 	if len(history) != 1 || history[0].Kind != "message" || history[0].Text != "after directed signal" {
 		t.Error("signaling or roster was persisted", history)
@@ -190,7 +190,7 @@ func TestSignalsRejectMalformedOfflineAndSelfTargets(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	noSignalBeforeMessage(t, b, barrier)
+	noSignalBeforeMessage(t, b, barrier.ID)
 	b.Close()
 	rosterSize(t, a, 1)
 	id := ID()
