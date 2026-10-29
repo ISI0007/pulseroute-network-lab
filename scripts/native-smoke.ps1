@@ -64,7 +64,7 @@ try {
     $elements=$script:root.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
     $tree=foreach($element in $elements){[ordered]@{name=$element.Current.Name;type=$element.Current.ControlType.ProgrammaticName}}
     $tree | Select-Object -First 250 | ConvertTo-Json -Depth 3 | Set-Content -Encoding UTF8 (Join-Path $evidence 'native-accessibility-tree.json')
-    foreach($page in @('Overview','Messages','Transfers','Network Lab','History','Settings')){
+    foreach($page in @('Overview','Messages','Calls','Nearby','Transfers','Network Lab','History','Settings')){
         Invoke-Button $page
         Start-Sleep -Milliseconds 400
         $checks.Add("Native navigation invoked: $page")
