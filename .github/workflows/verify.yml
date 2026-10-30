@@ -57,9 +57,15 @@ jobs:
       - run: npm run build
         working-directory: frontend
       - name: WebRTC lifecycle with synthetic media
-        run: node scripts/check-rtc.cjs
+        shell: pwsh
+        run: |
+          node scripts/check-rtc.cjs | Tee-Object build/evidence/rtc-browser.json
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: QR round-trip
-        run: node scripts/check-qr.cjs
+        shell: pwsh
+        run: |
+          node scripts/check-qr.cjs | Tee-Object build/evidence/qr-browser.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Real nearby browser upload and download
         shell: pwsh
         run: |
