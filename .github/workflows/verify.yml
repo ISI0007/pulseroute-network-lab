@@ -60,6 +60,12 @@ jobs:
         run: node scripts/check-rtc.cjs
       - name: QR round-trip
         run: node scripts/check-qr.cjs
+      - name: Real nearby browser upload and download
+        shell: pwsh
+        run: |
+          $env:PULSEROUTE_BROWSER_TEST = "1"
+          go test -json ./internal/nearby -run TestBrowserPortal -count=1 | Tee-Object build/evidence/nearby-browser.jsonl
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Desktop backend tests
         shell: pwsh
         run: |
