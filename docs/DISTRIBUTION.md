@@ -31,7 +31,7 @@ Zehri Developers is the product brand; the certificate publisher must be the ide
 
 Two routes require the owner's decision before enrollment:
 - Individual commercial certificate: Certum Standard Code Signing and SSL.com IV describe individual validation. The individual certificate normally displays the validated person's name. Confirm the applicant's eligibility, accepted identification/address documents, total certificate/cloud-signing fees and refund terms directly with the provider before paying. Submit identity documents only through the provider's official verification channel.
-- Open-source sponsorship: SignPath Foundation is a possible application route if the owner chooses an OSI-approved license and meets its other project/reputation/release conditions. Approval is not automatic, and the certificate publisher is SignPath Foundation. The owner approved MIT on 28 October 2026 and LICENSE is present. No sponsorship application has been submitted.
+- Open-source sponsorship: the owner approved MIT and submitted the SignPath Foundation application on 28 October 2026. The owner reported seeing the form's confirmation page. Provider review remains pending; no sponsored certificate, signing account, or signed release exists. Approval is not automatic, and any sponsored certificate publisher would be SignPath Foundation.
 
 Microsoft Artifact Signing Public Trust has geographic and publisher eligibility restrictions. Check its current eligibility list before enrolling. A Private Trust profile is not a substitute for public distribution.
 
@@ -43,4 +43,4 @@ Official pages:
 Suggested provider inquiry (not sent): Can you issue a publicly trusted Windows Authenticode code-signing certificate to me as an individual developer? Which legal name will be shown, what documents are accepted, and what is the complete cost including secure key storage and signing access? Supply location and identity details privately to the provider when required.
 
 ## Free sponsorship preparation
-The owner selected exploration of free open-source sponsorship and approved MIT. See SPONSORSHIP_APPLICATION_DRAFT.md for the current draft/checklist, CODE_SIGNING_POLICY.md for release responsibilities and PRIVACY.md for data/removal behavior. No sponsored certificate has been granted.
+The owner selected free open-source sponsorship, approved MIT, and authorized the application submission. See SPONSORSHIP_APPLICATION_DRAFT.md for the submitted project information/checklist, CODE_SIGNING_POLICY.md for release responsibilities and PRIVACY.md for data/removal behavior. No sponsored certificate has been granted.
